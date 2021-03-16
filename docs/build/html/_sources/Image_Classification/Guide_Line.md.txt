@@ -1,16 +1,9 @@
-### Install
+## Tutorial 1 : MNIST
 
-To see the current release :  
-```
-$ pip install tensorflow
-```
+If you want to know the results of MNIST, See this [link(colab)](https://colab.research.google.com/drive/1cDfsA_no_bLmv5S7217nL0UcEd2nZ1Hr?usp=sharing)
 
 
-### Tutorial 1 : MNIST
 
-We'll introduce Later
-
-
-### Tutorial 2 : Fashion MNIST
+## Tutorial 2 : Fashion MNIST
 
 We'll introduce Later

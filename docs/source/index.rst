@@ -3,21 +3,32 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-AI_beginner_course's documentation
+Welcome to AI_beginner_course's documentation!
 ==============================================
 
-We indtroduce how to install tf and see the datases, then finally train the models
-
-First, we make **Image Classification** models ourselves!
+We indtroduce 
+    - the way to Install Nvidia Jetson nano Devloper kit
+    - the way to Train AI models
+        - **Image Classification**
+            - Tutorial 1 : MNIST
+            - Tutorial 2 : Fashion-MNIST
+        - **Object Detection**
+            - Data Preparation (For Face Detection)
+            - Train with YOLOv5
+            - Inference with Camera
 
 .. toctree::
    :maxdepth: 2
-   :caption: Image_Classification:
+   :caption: Get Started:
+
+   Get_Started.md
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Image Classification
 
    Image_Classification/Guide_Line.md
-
-Sencond, let's use **Object Detection** Opensources!
-
+   
 .. toctree::
    :maxdepth: 2
    :caption: Object_Detection:

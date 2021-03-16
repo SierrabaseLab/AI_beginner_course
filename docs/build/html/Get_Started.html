@@ -1,0 +1,271 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Install : Prerequisies and Dependencies &mdash; AI_beginner_course 1.0.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="_static/SierraBASE.png"/>
+  
+
+  
+  
+
+  
+    <link rel="canonical" href="https://sierrabaselab.github.io/AI_beginner_course/Get_Started.html" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Tutorial 1 : MNIST" href="Image_Classification/Guide_Line.html" />
+    <link rel="prev" title="Welcome to AI_beginner_course’s documentation!" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> AI_beginner_course
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Get Started:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Install : Prerequisies and Dependencies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#install-tensorflow">Install : tensorflow</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Image Classification</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Image_Classification/Guide_Line.html">Tutorial 1 : MNIST</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Image_Classification/Guide_Line.html#tutorial-2-fashion-mnist">Tutorial 2 : Fashion MNIST</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Object_Detection:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Object_Detection/Guide_Line.html">Install YOLOv5</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">AI_beginner_course</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Install : Prerequisies and Dependencies</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/Get_Started.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="install-prerequisies-and-dependencies">
+<h1>Install : Prerequisies and Dependencies<a class="headerlink" href="#install-prerequisies-and-dependencies" title="Permalink to this headline">¶</a></h1>
+<ol class="simple">
+<li><p>Install “Nvidia Jetson nano toolkit” following the <a class="reference external" href="https://developer.nvidia.com/embedded/learn/get-started-jetson-nano-devkit#write">official instructions</a></p></li>
+</ol>
+<p>Then, you have to check tensorflow version <a class="reference external" href="https://docs.nvidia.com/deeplearning/frameworks/install-tf-jetson-platform-release-notes/tf-jetson-rel.ht4.5ml">in this link</a></p>
+<p>In my case, these packages are set up</p>
+<ul class="simple">
+<li><p>JetPack 4.5.1</p></li>
+<li><p>L4T 32.5.1</p></li>
+<li><p>TensorRT 7.1.3</p></li>
+<li><p>CUDA 10.2</p></li>
+<li><p>CuDNN 8.0</p></li>
+<li><p>OpenCV 4.1.1</p></li>
+<li><p>VPI 1.0</p></li>
+</ul>
+<p>Therefore, my tensorflow version is 2.4.0</p>
+<ol>
+<li><p>Install Sysem Packages</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>sudo apt-get update
+sudo apt-get install libhdf5-serial-dev hdf5-tools libhdf5-dev zlib1g-dev zip libjpeg8-dev liblapack-dev libblas-dev gfortran
+</pre></div>
+</div>
+</li>
+<li><p>Upgrade pip3</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>sudo apt-get install python3-pip
+sudo pip3 install -U pip testresources <span class="nv">setuptools</span><span class="o">==</span><span class="m">49</span>.6.0
+</pre></div>
+</div>
+</li>
+<li><p>Install Python Package Dependencies</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>sudo pip3 install -U <span class="nv">numpy</span><span class="o">==</span><span class="m">1</span>.19.4 <span class="nv">future</span><span class="o">==</span><span class="m">0</span>.18.2 <span class="nv">mock</span><span class="o">==</span><span class="m">3</span>.0.5 <span class="nv">h5py</span><span class="o">==</span><span class="m">2</span>.10.0 <span class="nv">keras_preprocessing</span><span class="o">==</span><span class="m">1</span>.1.1 <span class="nv">keras_applications</span><span class="o">==</span><span class="m">1</span>.0.8 <span class="nv">gast</span><span class="o">==</span><span class="m">0</span>.2.2 futures protobuf pybind11
+</pre></div>
+</div>
+</li>
+</ol>
+</div>
+<div class="section" id="install-tensorflow">
+<h1>Install : tensorflow<a class="headerlink" href="#install-tensorflow" title="Permalink to this headline">¶</a></h1>
+<ol>
+<li><p>Install latest version tf &gt; 2.x (Recommend)</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>sudo pip3 install --pre --extra-index-url https://developer.download.nvidia.com/compute/redist/jp/v45 tensorflow
+</pre></div>
+</div>
+</li>
+<li><p>Install lower version tf &lt; 2.x</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>sudo pip3 install --pre --extra-index-url https://developer.download.nvidia.com/compute/redist/jp/v45 ‘tensorflow&lt;<span class="m">2</span>’
+</pre></div>
+</div>
+</li>
+</ol>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="Image_Classification/Guide_Line.html" class="btn btn-neutral float-right" title="Tutorial 1 : MNIST" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="index.html" class="btn btn-neutral float-left" title="Welcome to AI_beginner_course’s documentation!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, SierraBaseLab.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
