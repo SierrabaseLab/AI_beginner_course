@@ -91,6 +91,7 @@
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Install : Prerequisies and Dependencies</a></li>
 <li class="toctree-l1"><a class="reference internal" href="#install-tensorflow">Install : tensorflow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#download-project">Download : Project</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Image Classification</span></p>
 <ul>
@@ -170,10 +171,9 @@
   <div class="section" id="install-prerequisies-and-dependencies">
 <h1>Install : Prerequisies and Dependencies<a class="headerlink" href="#install-prerequisies-and-dependencies" title="Permalink to this headline">¶</a></h1>
 <p>First of all, we need to install “Nvidia Jetson nano toolkit” following the <a class="reference external" href="https://developer.nvidia.com/embedded/learn/get-started-jetson-nano-devkit#write">official instructions</a></p>
-<p>If Installation has been completed, then run jetson nano toolkit. We only proceed with Jetson Nano.
-Before install tensorflow, you have to check Jetpack version(<strong>It is so important!</strong>) The way to check jetpack version is very simple.</p>
-<p>Your downloaded zip file will be <code class="docutils literal notranslate"><span class="pre">jetson-nano-jp451-sd-card-image.zip</span></code>. This means you’ve installed JetPack 4.5.1 version.
-In my case, these packages are set up</p>
+<p>Before install tensorflow, you have to check Jetpack version(<strong>It is so important!</strong>) The way to check jetpack version is very simple.</p>
+<p>Your downloaded zip file will be <code class="docutils literal notranslate"><span class="pre">jetson-nano-jp451-sd-card-image.zip</span></code>. This means you’ve installed JetPack 4.5.1 version.</p>
+<p>In my case, these packages are set up</p>
 <ul class="simple">
 <li><p>JetPack 4.5.1</p></li>
 <li><p>L4T 32.5.1</p></li>
@@ -183,8 +183,9 @@ In my case, these packages are set up</p>
 <li><p>OpenCV 4.1.1</p></li>
 <li><p>VPI 1.0</p></li>
 </ul>
-<p>by <a class="reference external" href="https://developer.nvidia.com/embedded/jetpack">this link</a>.</p>
+<p>by <a class="reference external" href="https://developer.nvidia.com/embedded/jetpack">this link</a>. If you want to know older version, <a class="reference external" href="https://developer.nvidia.com/embedded/jetpack-archive">check this site</a></p>
 <p>Also, the suitable tensorflow version can be found in <a class="reference external" href="https://docs.nvidia.com/deeplearning/frameworks/install-tf-jetson-platform-release-notes/tf-jetson-rel.html#tf-jetson-rel">here</a>. My tensorflow version is 2.4.0!!</p>
+<p>Now, let’s begin installation packages for Jetson nano kit. You must proceed with Jetson nano. Jetson nano OS is based on <code class="docutils literal notranslate"><span class="pre">Ubuntu</span></code>. So, it may be not diffcult.</p>
 <ol>
 <li><p>Install System Packages</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>sudo apt-get update
@@ -207,18 +208,42 @@ sudo pip3 install -U pip testresources <span class="nv">setuptools</span><span c
 </div>
 <div class="section" id="install-tensorflow">
 <h1>Install : tensorflow<a class="headerlink" href="#install-tensorflow" title="Permalink to this headline">¶</a></h1>
+<p>Many Developers still find tensorflow(tf) version under 2. You must choose either 1 or 2 <code class="docutils literal notranslate"><span class="pre">(Recommend</span> <span class="pre">to</span> <span class="pre">follow</span> <span class="pre">phase</span> <span class="pre">1,</span> <span class="pre">not</span> <span class="pre">2)</span></code></p>
 <ol>
-<li><p>Install latest version tf &gt; 2.x (Recommend! As I told you, you must check JetPack version and tensorflow version)</p>
+<li><p>Install latest version tf &gt; 2.x (Recommend in this course!)</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>sudo pip3 install --pre --extra-index-url https://developer.download.nvidia.com/compute/redist/jp/v45 tensorflow
 </pre></div>
 </div>
 </li>
-<li><p>Install lower version tf &lt; 2.x</p>
+<li><p>Or, you can also install lower version tf &lt; 2.x (If you’ve finished step 1, never do this!)</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>sudo pip3 install --pre --extra-index-url https://developer.download.nvidia.com/compute/redist/jp/v45 ‘tensorflow&lt;<span class="m">2</span>’
 </pre></div>
 </div>
 </li>
 </ol>
+</div>
+<div class="section" id="download-project">
+<h1>Download : Project<a class="headerlink" href="#download-project" title="Permalink to this headline">¶</a></h1>
+<p>Congraturations!! We start projects</p>
+<p>I set <code class="docutils literal notranslate"><span class="pre">/home/{your_nano_id}/AI_beginner_course</span></code></p>
+<ol>
+<li><p>Go into your home directory</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span>
+</pre></div>
+</div>
+</li>
+<li><p>Download project from github</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/SierrabaseLab/AI_beginner_course.git
+</pre></div>
+</div>
+</li>
+<li><p>Prepare next folder to <code class="docutils literal notranslate"><span class="pre">./DL_course/Image_classification</span></code></p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> AI_beginner_course/DL_course/Image_Classification/
+</pre></div>
+</div>
+</li>
+</ol>
+<p>The next “MNIST Tutorial” Section continues…</p>
 </div>
 
 

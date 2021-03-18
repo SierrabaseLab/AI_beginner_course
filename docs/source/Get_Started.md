@@ -1,10 +1,10 @@
 ## Install : Prerequisies and Dependencies
 First of all, we need to install "Nvidia Jetson nano toolkit" following the [official instructions](https://developer.nvidia.com/embedded/learn/get-started-jetson-nano-devkit#write)
 
-If Installation has been completed, then run jetson nano toolkit. We only proceed with Jetson Nano.
 Before install tensorflow, you have to check Jetpack version(**It is so important!**) The way to check jetpack version is very simple. 
 
 Your downloaded zip file will be ```jetson-nano-jp451-sd-card-image.zip```. This means you've installed JetPack 4.5.1 version.
+
 In my case, these packages are set up
 
 - JetPack 4.5.1
@@ -15,9 +15,11 @@ In my case, these packages are set up
 - OpenCV 4.1.1
 - VPI 1.0
 
-by [this link](https://developer.nvidia.com/embedded/jetpack).
+by [this link](https://developer.nvidia.com/embedded/jetpack). If you want to know older version, [check this site](https://developer.nvidia.com/embedded/jetpack-archive)
 
-Also, the suitable tensorflow version can be found in [here](https://docs.nvidia.com/deeplearning/frameworks/install-tf-jetson-platform-release-notes/tf-jetson-rel.html#tf-jetson-rel). My tensorflow version is 2.4.0!!
+Also, the suitable tensorflow version can be found in [here](https://docs.nvidia.com/deeplearning/frameworks/install-tf-jetson-platform-release-notes/tf-jetson-rel.html#tf-jetson-rel). My tensorflow version is 2.4.0!! 
+
+Now, let's begin installation packages for Jetson nano kit. You must proceed with Jetson nano. Jetson nano OS is based on ```Ubuntu```. So, it may be not diffcult.
 
 1. Install System Packages
     ```shell
@@ -38,12 +40,36 @@ Also, the suitable tensorflow version can be found in [here](https://docs.nvidia
 
 ## Install : tensorflow
 
-1. Install latest version tf > 2.x (Recommend! As I told you, you must check JetPack version and tensorflow version)
+Many Developers still find tensorflow(tf) version under 2. You must choose either 1 or 2 ```(Recommend to follow phase 1, not 2)```
+
+1. Install latest version tf > 2.x (Recommend in this course!)
     ```shell
     sudo pip3 install --pre --extra-index-url https://developer.download.nvidia.com/compute/redist/jp/v45 tensorflow
     ```
 
-2. Install lower version tf < 2.x
+2. Or, you can also install lower version tf < 2.x (If you've finished step 1, never do this!)
     ```shell
     sudo pip3 install --pre --extra-index-url https://developer.download.nvidia.com/compute/redist/jp/v45 ‘tensorflow<2’
     ```
+
+## Download : Project
+
+Congraturations!! We start projects
+
+I set ```/home/{your_nano_id}/AI_beginner_course```
+
+1. Go into your home directory
+	```shell
+	cd
+	```
+2. Download project from github
+	```shell
+	git clone https://github.com/SierrabaseLab/AI_beginner_course.git
+	```
+
+3. Prepare next folder to ```./DL_course/Image_classification```
+	```shell
+	cd AI_beginner_course/DL_course/Image_Classification/
+	```
+
+The next "MNIST Tutorial" Section continues...

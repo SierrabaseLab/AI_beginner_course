@@ -91,6 +91,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../Get_Started.html">Install : Prerequisies and Dependencies</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Get_Started.html#install-tensorflow">Install : tensorflow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Get_Started.html#download-project">Download : Project</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Image Classification</span></p>
 <ul class="current">
@@ -171,15 +172,72 @@
 <h1>Tutorial 1 : MNIST<a class="headerlink" href="#tutorial-1-mnist" title="Permalink to this headline">¶</a></h1>
 <ol>
 <li><p>Training Phase : See this <a class="reference external" href="https://colab.research.google.com/drive/1cDfsA_no_bLmv5S7217nL0UcEd2nZ1Hr?usp=sharing">link(colab)</a></p>
-<p>We trained 50,000 numbers with Open Dataset, MNIST.</p>
-<p>You may remember the only <code class="docutils literal notranslate"><span class="pre">mnist_99acc_model.h5</span></code> file.</p>
+<p>We trained 50,000 numbers of images(Open Dataset, MNIST).</p>
+<p>You may remember the only <code class="docutils literal notranslate"><span class="pre">mnist_99acc_model.h5</span></code> file. (You can <a class="reference external" href="https://docs.google.com/uc?export=download&amp;id=1tTfB7C4Imavg_ppIwXk0DG-cRkA5P_mt">Download here</a>)</p>
 <p>It helps to load model paramters easily.</p>
 <p>In this course, you can train in colab with GPU for free. It is too hard to train mnist datasets with Jetson Nano toolkits, because of low memories. <strong>I strongly recommend to train with devices having GPUs.</strong></p>
 </li>
-<li><p>Data Preparation : See this <a class="reference external" href="https://colab.research.google.com/drive/18eUHkOg5jy2YgugphupEjhuAMmem56uD?usp=sharing">link(colab)</a></p></li>
-<li><p>Inference : Same as the number 2.</p></li>
+<li><p>Data Preparation : See this <a class="reference external" href="https://colab.research.google.com/drive/18eUHkOg5jy2YgugphupEjhuAMmem56uD?usp=sharing">link(colab)</a></p>
+<p>This helps your handmade datasets to become suitable inputs of this model.</p>
+<p>I wrote this codes about Data Preprocessing.</p>
+<ul>
+<li><p>How to run? (Your directories must be on <code class="docutils literal notranslate"><span class="pre">{your_directory}/AI_beginner_course</span></code>)</p>
+<ol class="simple">
+<li><p>Prepare only a written number (0 ~ 9)</p></li>
 </ol>
-<p>You can check in <code class="docutils literal notranslate"><span class="pre">AI_beginner_course/Image_Classification/Data_Preparation.py</span></code>.</p>
+<p>There are some rules. Keep in mind!</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mf">1.</span> <span class="n">The</span> <span class="n">written</span> <span class="n">number</span> <span class="n">should</span> <span class="n">be</span> <span class="n">enough</span> <span class="n">large</span> <span class="p">(</span><span class="n">Recommend</span> <span class="n">to</span> <span class="n">take</span> <span class="mi">80</span><span class="o">%</span> <span class="n">of</span> <span class="n">the</span> <span class="n">area</span><span class="p">)</span>
+<span class="mf">2.</span> <span class="n">The</span> <span class="n">written</span> <span class="n">number</span> <span class="n">should</span> <span class="n">be</span> <span class="n">the</span> <span class="n">only</span> <span class="n">one</span> <span class="n">number</span>
+  <span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">g</span><span class="o">.</span> <span class="n">never</span> <span class="n">recognize</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">64</span><span class="p">,</span> <span class="mf">58.</span><span class="o">..</span> <span class="n">Only</span> <span class="n">allow</span> <span class="s2">&quot;0&quot;</span><span class="p">,</span> <span class="s2">&quot;3&quot;</span><span class="o">.</span> <span class="n">etc</span><span class="o">.</span><span class="p">)</span>
+<span class="mf">3.</span> <span class="n">The</span> <span class="n">more</span> <span class="n">Pen</span> <span class="n">thickness</span><span class="p">,</span> <span class="n">the</span> <span class="n">better</span><span class="o">.</span>
+<span class="mf">4.</span> <span class="n">The</span> <span class="n">background</span><span class="p">(</span><span class="n">paper</span><span class="p">)</span> <span class="n">should</span> <span class="n">be</span> <span class="n">white</span><span class="o">.</span> <span class="n">Don</span><span class="s1">&#39;t shade the light by cameras.</span>
+</pre></div>
+</div>
+<p>For example,</p>
+  <img src="./3.jpg" width="300px" height="300px"><p>Then, these result will be</p>
+<p><img alt="index" src="../_images/index.png" /></p>
+<ol class="simple">
+<li><p>Run “Data_Preparation.py”</p></li>
+</ol>
+<p>Note that we don’t care what the file names are. You only need to any “.jpg” files</p>
+<p>At, <code class="docutils literal notranslate"><span class="pre">{your_directory}AI_beginner_course/DL_course/}</span></code>,</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ tree Image_Classification/
+Image_Classification/
+├── Data_Preperation.py
+├── Test_0.jpg
+├── Test_1.jpg
+├── Test_2.jpg
+└── Test_3.jpg
+
+<span class="m">0</span> directories, <span class="m">5</span> files
+</pre></div>
+</div>
+<p>Then <code class="docutils literal notranslate"><span class="pre">*.jpg</span></code> files will convert to <code class="docutils literal notranslate"><span class="pre">Preprocessed_i.jpg</span></code> files by running this py :</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>python3 Data_Preparation.py
+</pre></div>
+</div>
+<p>Results:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>Image_Classification/
+├── Data_Preperation.py
+├── PreProcessed
+│   ├── Preprocessed_0.jpg
+│   ├── Preprocessed_1.jpg
+│   ├── Preprocessed_2.jpg
+│   └── Preprocessed_3.jpg
+├── Test_0.jpg
+├── Test_1.jpg
+├── Test_2.jpg
+└── Test_3.jpg
+
+<span class="m">1</span> directory, <span class="m">9</span> files
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+<li><p>Inference : See</p></li>
+</ol>
+<p>You can check in <code class="docutils literal notranslate"><span class="pre">AI_beginner_course/Image_Classification/Inference.py</span></code>.</p>
 </div>
 <div class="section" id="tutorial-2-fashion-mnist">
 <h1>Tutorial 2 : Fashion MNIST<a class="headerlink" href="#tutorial-2-fashion-mnist" title="Permalink to this headline">¶</a></h1>
