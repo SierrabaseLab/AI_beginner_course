@@ -169,11 +169,11 @@
             
   <div class="section" id="install-prerequisies-and-dependencies">
 <h1>Install : Prerequisies and Dependencies<a class="headerlink" href="#install-prerequisies-and-dependencies" title="Permalink to this headline">¶</a></h1>
-<ol class="simple">
-<li><p>Install “Nvidia Jetson nano toolkit” following the <a class="reference external" href="https://developer.nvidia.com/embedded/learn/get-started-jetson-nano-devkit#write">official instructions</a></p></li>
-</ol>
-<p>Then, you have to check tensorflow version <a class="reference external" href="https://docs.nvidia.com/deeplearning/frameworks/install-tf-jetson-platform-release-notes/tf-jetson-rel.ht4.5ml">in this link</a></p>
-<p>In my case, these packages are set up</p>
+<p>First of all, we need to install “Nvidia Jetson nano toolkit” following the <a class="reference external" href="https://developer.nvidia.com/embedded/learn/get-started-jetson-nano-devkit#write">official instructions</a></p>
+<p>If Installation has been completed, then run jetson nano toolkit. We only proceed with Jetson Nano.
+Before install tensorflow, you have to check Jetpack version(<strong>It is so important!</strong>) The way to check jetpack version is very simple.</p>
+<p>Your downloaded zip file will be <code class="docutils literal notranslate"><span class="pre">jetson-nano-jp451-sd-card-image.zip</span></code>. This means you’ve installed JetPack 4.5.1 version.
+In my case, these packages are set up</p>
 <ul class="simple">
 <li><p>JetPack 4.5.1</p></li>
 <li><p>L4T 32.5.1</p></li>
@@ -183,9 +183,10 @@
 <li><p>OpenCV 4.1.1</p></li>
 <li><p>VPI 1.0</p></li>
 </ul>
-<p>Therefore, my tensorflow version is 2.4.0</p>
+<p>by <a class="reference external" href="https://developer.nvidia.com/embedded/jetpack">this link</a>.</p>
+<p>Also, the suitable tensorflow version can be found in <a class="reference external" href="https://docs.nvidia.com/deeplearning/frameworks/install-tf-jetson-platform-release-notes/tf-jetson-rel.html#tf-jetson-rel">here</a>. My tensorflow version is 2.4.0!!</p>
 <ol>
-<li><p>Install Sysem Packages</p>
+<li><p>Install System Packages</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>sudo apt-get update
 sudo apt-get install libhdf5-serial-dev hdf5-tools libhdf5-dev zlib1g-dev zip libjpeg8-dev liblapack-dev libblas-dev gfortran
 </pre></div>
@@ -207,7 +208,7 @@ sudo pip3 install -U pip testresources <span class="nv">setuptools</span><span c
 <div class="section" id="install-tensorflow">
 <h1>Install : tensorflow<a class="headerlink" href="#install-tensorflow" title="Permalink to this headline">¶</a></h1>
 <ol>
-<li><p>Install latest version tf &gt; 2.x (Recommend)</p>
+<li><p>Install latest version tf &gt; 2.x (Recommend! As I told you, you must check JetPack version and tensorflow version)</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>sudo pip3 install --pre --extra-index-url https://developer.download.nvidia.com/compute/redist/jp/v45 tensorflow
 </pre></div>
 </div>
