@@ -3,7 +3,7 @@ import glob
 import numpy as np
 import os
 import shutil
-from matplotlib import pyplot as plt
+
 image_paths = sorted(glob.glob('*.jpg'))
 print("There are ",len(image_paths), "images")
 
