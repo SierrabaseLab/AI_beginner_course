@@ -1,5 +1,12 @@
 ## Tutorial 1 : MNIST
 
+*You need to set directories on ```{your_directory}/AI_begiiner_course/DL_course/Image_Classification```*
+
+Don't forget below line :
+```shell
+cd AI_beginner_course/DL_course/Image_Classification/
+```
+
 1. Training Phase : See this [link(colab)](https://colab.research.google.com/drive/1cDfsA_no_bLmv5S7217nL0UcEd2nZ1Hr?usp=sharing)
 
 	We trained 50,000 numbers of images(Open Dataset, MNIST).
@@ -16,37 +23,37 @@
 
 	I wrote this codes about Data Preprocessing.
 
-	- How to run? (Your directories must be on ```{your_directory}/AI_beginner_course```)
+	- How to run? (Your directories must be on ```Image_Classification/```)
 
 		1. Prepare only a written number (0 ~ 9)	
 
 		There are some rules. Keep in mind!
 
 		```
-		1. The written number should be enough large (Recommend to take 80% of the area)
+		1. The written number should be enough large (Recommend to take over the 60% area)
 		2. The written number should be the only one number
 		  (e.g. never recognize 32, 64, 58... Only allow "0", "3". etc.)
 		3. The more Pen thickness, the better.
-		4. The background(paper) should be white. Don't shade the light by cameras.
+		4. The background (paper) should be white. Don't shade the light by cameras.
 		```
 
 		For example,
 		
-		<img src="./3.jpg" width="300px" height="300px">
+		<img src="./3.jpg" width="300px" height="200px">
 		
 		Then, these result will be
 
 		![index](./index.png)
 
-		2. Run "Data_Preparation.py"
+		2. Let's Run "Data_Preparation.py"
 	
-		Note that we don't care what the file names are. You only need to any ".jpg" files
+		Note that we don't care what the file names are. You only need any ".jpg" files
 		
-		At, ```{your_directory}AI_beginner_course/DL_course/}```,
+		At, ```{your_directory}AI_beginner_course/DL_course/Image_Classification}```,
 		```shell
-		$ tree Image_Classification/
-		Image_Classification/
-		├── Data_Preperation.py
+		$ tree .
+		.
+		├── Data_Preparation.py
 		├── Test_0.jpg
 		├── Test_1.jpg
 		├── Test_2.jpg
@@ -64,8 +71,9 @@
 
 		Results:
 		```shell
-		Image_Classification/
-		├── Data_Preperation.py
+		$ tree .
+		.
+		├── Data_Preparation.py
 		├── PreProcessed
 		│   ├── Preprocessed_0.jpg
 		│   ├── Preprocessed_1.jpg
@@ -80,11 +88,34 @@
 		```
 
 
+3. Inference : See this [link(colab)](https://colab.research.google.com/drive/18eUHkOg5jy2YgugphupEjhuAMmem56uD?usp=sharing) (Same as 2)
+
+	You can test on your written numbers at ```AI_beginner_course/Image_Classification/Inference.py```.
+	Your written and resized ```PreProcessed/Preprocessed_i.jpg``` files will be evaluated from saved ```Image_Classification/mnist_99acc_model.h5``` Anyway, 
+
+	```shell
+	$ python3 Inference.py
+	
+	(omit)
+
+	In PreProcessed folder, there are files :
+	 ['PreProcessed/Preprocessed_0.jpg', 'PreProcessed/Preprocessed_1.jpg', 'PreProcessed/Preprocessed_2.jpg', 'PreProcessed/Preprocessed_3.jpg'] 
+	
+	(omit)
+	
+	From PreProcessed/Preprocessed_0.jpg, We predicted :  [3] .
+
+	From PreProcessed/Preprocessed_1.jpg, We predicted :  [7] .
+
+	From PreProcessed/Preprocessed_2.jpg, We predicted :  [8] .
+
+	From PreProcessed/Preprocessed_3.jpg, We predicted :  [4] .
+	```
 
 
-3. Inference : See
 
-You can check in ```AI_beginner_course/Image_Classification/Inference.py```.
+From now on, you've checked a simple model training and inference with MNIST!
+
 
 ## Tutorial 2 : Fashion MNIST
 
