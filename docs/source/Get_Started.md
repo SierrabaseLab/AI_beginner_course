@@ -23,19 +23,19 @@ Now, let's begin installation packages for Jetson nano kit. You must proceed wit
 
 1. Install System Packages
     ```shell
-    sudo apt-get update
-    sudo apt-get install libhdf5-serial-dev hdf5-tools libhdf5-dev zlib1g-dev zip libjpeg8-dev liblapack-dev libblas-dev gfortran tree
+    $ sudo apt-get update
+    $ sudo apt-get install libhdf5-serial-dev hdf5-tools libhdf5-dev zlib1g-dev zip libjpeg8-dev liblapack-dev libblas-dev gfortran tree
    ```
 
 2. Upgrade pip3
     ```shell
-    sudo apt-get install python3-pip
-    sudo pip3 install -U pip testresources setuptools==49.6.0
+    $ sudo apt-get install python3-pip
+    $ sudo pip3 install -U pip testresources setuptools==49.6.0
     ```
 
 3. Install Python Package Dependencies
     ```shell
-    sudo pip3 install -U numpy==1.19.4 future==0.18.2 mock==3.0.5 h5py==2.10.0 keras_preprocessing==1.1.1 keras_applications==1.0.8 gast==0.2.2 futures protobuf pybind11
+    $ sudo pip3 install -U numpy==1.19.4 future==0.18.2 mock==3.0.5 h5py==2.10.0 keras_preprocessing==1.1.1 keras_applications==1.0.8 gast==0.2.2 futures protobuf pybind11
     ```
 
 ## Install : tensorflow
@@ -44,12 +44,12 @@ Many Developers still find tensorflow(tf) version under 2. You must choose eithe
 
 1. Install latest version tf > 2.x (Recommend in this course!)
     ```shell
-    sudo pip3 install --pre --extra-index-url https://developer.download.nvidia.com/compute/redist/jp/v45 tensorflow
+    $ sudo pip3 install --pre --extra-index-url https://developer.download.nvidia.com/compute/redist/jp/v45 tensorflow
     ```
 
 2. Or, you can also install lower version tf < 2.x (If you've finished step 1, never do this!)
     ```shell
-    sudo pip3 install --pre --extra-index-url https://developer.download.nvidia.com/compute/redist/jp/v45 ‘tensorflow<2’
+    $ sudo pip3 install --pre --extra-index-url https://developer.download.nvidia.com/compute/redist/jp/v45 ‘tensorflow<2’
     ```
 
 ## Download : Project
@@ -60,16 +60,16 @@ I set ```/home/{your_nano_id}/AI_beginner_course```
 
 1. Go into your home directory
 	```shell
-	cd
+	$ cd
 	```
 2. Download project from github
 	```shell
-	git clone https://github.com/SierrabaseLab/AI_beginner_course.git
+	$ git clone https://github.com/SierrabaseLab/AI_beginner_course.git
 	```
 
 3. Prepare next folder to ```./DL_course/Image_classification```
 	```shell
-	cd AI_beginner_course/DL_course/Image_Classification/
+	$ cd AI_beginner_course/DL_course/Image_Classification/
 	```
 
 The next "MNIST Tutorial" Section continues...

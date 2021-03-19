@@ -1,10 +1,10 @@
 ## Tutorial 1 : MNIST
 
-*You need to set directories on ```{your_directory}/AI_begiiner_course/DL_course/Image_Classification```*
+*You need to set directories on ```{your_directory}/AI_beginner_course/DL_course/Image_Classification```*
 
 Don't forget below line :
 ```shell
-cd AI_beginner_course/DL_course/Image_Classification/
+$ cd AI_beginner_course/DL_course/Image_Classification/
 ```
 
 1. Training Phase : See this [link(colab)](https://colab.research.google.com/drive/1cDfsA_no_bLmv5S7217nL0UcEd2nZ1Hr?usp=sharing)
@@ -15,7 +15,7 @@ cd AI_beginner_course/DL_course/Image_Classification/
 
 	It helps to load model paramters easily. 
 
-	In this course, you can train in colab with GPU for free. It is too hard to train mnist datasets with Jetson Nano toolkits, because of low memories. **I strongly recommend to train with devices having GPUs.**
+	(In this course, you can train in colab with GPU for free. It is too hard to train mnist datasets with Jetson Nano toolkits, because of low memories. **I strongly recommend to train with devices having GPUs.**)
 
 2. Data Preparation : See this [link(colab)](https://colab.research.google.com/drive/18eUHkOg5jy2YgugphupEjhuAMmem56uD?usp=sharing)
 	
@@ -37,15 +37,15 @@ cd AI_beginner_course/DL_course/Image_Classification/
 		4. The background (paper) should be white. Don't shade the light by cameras.
 		```
 
-		For example,
+		For example, there is a good case
 		
-		<img src="./3.jpg" width="300px" height="200px">
+		<img src="./3.jpg" width="100px" height="50px"> <img src="./7.jpg" width="100px" height ="50px"> <img src="./8.jpg" width="100px" height ="50px"> <img src="./9.jpg" width="100px" height ="50px">
 		
 		Then, these result will be
 
 		![index](./index.png)
 
-		2. Let's Run "Data_Preparation.py"
+		2. Now, let's Run "Data_Preparation.py"
 	
 		Note that we don't care what the file names are. You only need any ".jpg" files
 		
@@ -66,7 +66,7 @@ cd AI_beginner_course/DL_course/Image_Classification/
 		
 
 		```shell
-		python3 Data_Preparation.py
+		$ python3 Data_Preparation.py
 		```
 
 		Results:
@@ -111,7 +111,21 @@ cd AI_beginner_course/DL_course/Image_Classification/
 
 	From PreProcessed/Preprocessed_3.jpg, We predicted :  [4] .
 	```
+	
+	(QnA)
 
+	Q. I got a problem with :
+	```shell
+	ImportError: /usr/lib/aarch64-linux-gnu/libgomp.so.1: cannot allocate memory in static TLS block
+	```
+	What should I do?
+
+	A. Add at shell
+	```shell
+	$ export LD_PRELOAD=/usr/lib/aarch64-linux-gnu/libgomp.so.1
+	```
+
+	
 
 
 From now on, you've checked a simple model training and inference with MNIST!

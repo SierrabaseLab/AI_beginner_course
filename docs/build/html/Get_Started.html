@@ -188,19 +188,19 @@
 <p>Now, let’s begin installation packages for Jetson nano kit. You must proceed with Jetson nano. Jetson nano OS is based on <code class="docutils literal notranslate"><span class="pre">Ubuntu</span></code>. So, it may be not diffcult.</p>
 <ol>
 <li><p>Install System Packages</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>sudo apt-get update
-sudo apt-get install libhdf5-serial-dev hdf5-tools libhdf5-dev zlib1g-dev zip libjpeg8-dev liblapack-dev libblas-dev gfortran
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ sudo apt-get update
+$ sudo apt-get install libhdf5-serial-dev hdf5-tools libhdf5-dev zlib1g-dev zip libjpeg8-dev liblapack-dev libblas-dev gfortran tree
 </pre></div>
 </div>
 </li>
 <li><p>Upgrade pip3</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>sudo apt-get install python3-pip
-sudo pip3 install -U pip testresources <span class="nv">setuptools</span><span class="o">==</span><span class="m">49</span>.6.0
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ sudo apt-get install python3-pip
+$ sudo pip3 install -U pip testresources <span class="nv">setuptools</span><span class="o">==</span><span class="m">49</span>.6.0
 </pre></div>
 </div>
 </li>
 <li><p>Install Python Package Dependencies</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>sudo pip3 install -U <span class="nv">numpy</span><span class="o">==</span><span class="m">1</span>.19.4 <span class="nv">future</span><span class="o">==</span><span class="m">0</span>.18.2 <span class="nv">mock</span><span class="o">==</span><span class="m">3</span>.0.5 <span class="nv">h5py</span><span class="o">==</span><span class="m">2</span>.10.0 <span class="nv">keras_preprocessing</span><span class="o">==</span><span class="m">1</span>.1.1 <span class="nv">keras_applications</span><span class="o">==</span><span class="m">1</span>.0.8 <span class="nv">gast</span><span class="o">==</span><span class="m">0</span>.2.2 futures protobuf pybind11
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ sudo pip3 install -U <span class="nv">numpy</span><span class="o">==</span><span class="m">1</span>.19.4 <span class="nv">future</span><span class="o">==</span><span class="m">0</span>.18.2 <span class="nv">mock</span><span class="o">==</span><span class="m">3</span>.0.5 <span class="nv">h5py</span><span class="o">==</span><span class="m">2</span>.10.0 <span class="nv">keras_preprocessing</span><span class="o">==</span><span class="m">1</span>.1.1 <span class="nv">keras_applications</span><span class="o">==</span><span class="m">1</span>.0.8 <span class="nv">gast</span><span class="o">==</span><span class="m">0</span>.2.2 futures protobuf pybind11
 </pre></div>
 </div>
 </li>
@@ -211,12 +211,12 @@ sudo pip3 install -U pip testresources <span class="nv">setuptools</span><span c
 <p>Many Developers still find tensorflow(tf) version under 2. You must choose either 1 or 2 <code class="docutils literal notranslate"><span class="pre">(Recommend</span> <span class="pre">to</span> <span class="pre">follow</span> <span class="pre">phase</span> <span class="pre">1,</span> <span class="pre">not</span> <span class="pre">2)</span></code></p>
 <ol>
 <li><p>Install latest version tf &gt; 2.x (Recommend in this course!)</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>sudo pip3 install --pre --extra-index-url https://developer.download.nvidia.com/compute/redist/jp/v45 tensorflow
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ sudo pip3 install --pre --extra-index-url https://developer.download.nvidia.com/compute/redist/jp/v45 tensorflow
 </pre></div>
 </div>
 </li>
 <li><p>Or, you can also install lower version tf &lt; 2.x (If you’ve finished step 1, never do this!)</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>sudo pip3 install --pre --extra-index-url https://developer.download.nvidia.com/compute/redist/jp/v45 ‘tensorflow&lt;<span class="m">2</span>’
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ sudo pip3 install --pre --extra-index-url https://developer.download.nvidia.com/compute/redist/jp/v45 ‘tensorflow&lt;<span class="m">2</span>’
 </pre></div>
 </div>
 </li>
@@ -228,17 +228,17 @@ sudo pip3 install -U pip testresources <span class="nv">setuptools</span><span c
 <p>I set <code class="docutils literal notranslate"><span class="pre">/home/{your_nano_id}/AI_beginner_course</span></code></p>
 <ol>
 <li><p>Go into your home directory</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">cd</span>
 </pre></div>
 </div>
 </li>
 <li><p>Download project from github</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/SierrabaseLab/AI_beginner_course.git
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ git clone https://github.com/SierrabaseLab/AI_beginner_course.git
 </pre></div>
 </div>
 </li>
 <li><p>Prepare next folder to <code class="docutils literal notranslate"><span class="pre">./DL_course/Image_classification</span></code></p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> AI_beginner_course/DL_course/Image_Classification/
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">cd</span> AI_beginner_course/DL_course/Image_Classification/
 </pre></div>
 </div>
 </li>

@@ -170,9 +170,9 @@
             
   <div class="section" id="tutorial-1-mnist">
 <h1>Tutorial 1 : MNIST<a class="headerlink" href="#tutorial-1-mnist" title="Permalink to this headline">¶</a></h1>
-<p><em>You need to set directories on <code class="docutils literal notranslate"><span class="pre">{your_directory}/AI_begiiner_course/DL_course/Image_Classification</span></code></em></p>
+<p><em>You need to set directories on <code class="docutils literal notranslate"><span class="pre">{your_directory}/AI_beginner_course/DL_course/Image_Classification</span></code></em></p>
 <p>Don’t forget below line :</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> AI_beginner_course/DL_course/Image_Classification/
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">cd</span> AI_beginner_course/DL_course/Image_Classification/
 </pre></div>
 </div>
 <ol>
@@ -180,7 +180,7 @@
 <p>We trained 50,000 numbers of images(Open Dataset, MNIST).</p>
 <p>You may remember the only <code class="docutils literal notranslate"><span class="pre">mnist_99acc_model.h5</span></code> file. (You can <a class="reference external" href="https://docs.google.com/uc?export=download&amp;id=1tTfB7C4Imavg_ppIwXk0DG-cRkA5P_mt">Download here</a>)</p>
 <p>It helps to load model paramters easily.</p>
-<p>In this course, you can train in colab with GPU for free. It is too hard to train mnist datasets with Jetson Nano toolkits, because of low memories. <strong>I strongly recommend to train with devices having GPUs.</strong></p>
+<p>(In this course, you can train in colab with GPU for free. It is too hard to train mnist datasets with Jetson Nano toolkits, because of low memories. <strong>I strongly recommend to train with devices having GPUs.</strong>)</p>
 </li>
 <li><p>Data Preparation : See this <a class="reference external" href="https://colab.research.google.com/drive/18eUHkOg5jy2YgugphupEjhuAMmem56uD?usp=sharing">link(colab)</a></p>
 <p>This helps your handmade datasets to become suitable inputs of this model.</p>
@@ -198,11 +198,12 @@
 <span class="mf">4.</span> <span class="n">The</span> <span class="n">background</span> <span class="p">(</span><span class="n">paper</span><span class="p">)</span> <span class="n">should</span> <span class="n">be</span> <span class="n">white</span><span class="o">.</span> <span class="n">Don</span><span class="s1">&#39;t shade the light by cameras.</span>
 </pre></div>
 </div>
-<p>For example,</p>
-  <img src="./3.jpg" width="300px" height="200px"><p>Then, these result will be</p>
+<p>For example, there is a good case</p>
+<p><img src="./3.jpg" width="100px" height="50px"> <img src="./7.jpg" width="100px" height ="50px"> <img src="./8.jpg" width="100px" height ="50px"> <img src="./9.jpg" width="100px" height ="50px"></p>
+<p>Then, these result will be</p>
 <p><img alt="index" src="../_images/index.png" /></p>
 <ol class="simple">
-<li><p>Let’s Run “Data_Preparation.py”</p></li>
+<li><p>Now, let’s Run “Data_Preparation.py”</p></li>
 </ol>
 <p>Note that we don’t care what the file names are. You only need any “.jpg” files</p>
 <p>At, <code class="docutils literal notranslate"><span class="pre">{your_directory}AI_beginner_course/DL_course/Image_Classification}</span></code>,</p>
@@ -218,7 +219,7 @@
 </pre></div>
 </div>
 <p>Then <code class="docutils literal notranslate"><span class="pre">*.jpg</span></code> files will convert to <code class="docutils literal notranslate"><span class="pre">Preprocessed_i.jpg</span></code> files by running this py :</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>python3 Data_Preparation.py
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ python3 Data_Preparation.py
 </pre></div>
 </div>
 <p>Results:</p>
@@ -260,6 +261,16 @@ From PreProcessed/Preprocessed_1.jpg, We predicted :  <span class="o">[</span><s
 From PreProcessed/Preprocessed_2.jpg, We predicted :  <span class="o">[</span><span class="m">8</span><span class="o">]</span> .
 
 From PreProcessed/Preprocessed_3.jpg, We predicted :  <span class="o">[</span><span class="m">4</span><span class="o">]</span> .
+</pre></div>
+</div>
+<p>(QnA)</p>
+<p>Q. I got a problem with :</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>ImportError: /usr/lib/aarch64-linux-gnu/libgomp.so.1: cannot allocate memory <span class="k">in</span> static TLS block
+</pre></div>
+</div>
+<p>What should I do?</p>
+<p>A. Add at shell</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">export</span> <span class="nv">LD_PRELOAD</span><span class="o">=</span>/usr/lib/aarch64-linux-gnu/libgomp.so.1
 </pre></div>
 </div>
 </li>
