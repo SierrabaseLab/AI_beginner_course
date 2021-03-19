@@ -24,8 +24,8 @@ Now, let's begin installation packages for Jetson nano kit. You must proceed wit
 1. Install System Packages
     ```shell
     sudo apt-get update
-    sudo apt-get install libhdf5-serial-dev hdf5-tools libhdf5-dev zlib1g-dev zip libjpeg8-dev liblapack-dev libblas-dev gfortran
-    ```
+    sudo apt-get install libhdf5-serial-dev hdf5-tools libhdf5-dev zlib1g-dev zip libjpeg8-dev liblapack-dev libblas-dev gfortran tree
+   ```
 
 2. Upgrade pip3
     ```shell
