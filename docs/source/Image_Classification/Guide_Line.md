@@ -1,4 +1,4 @@
-### Tutorial : MNIST
+### Indtroduction : MNIST
 
 [<img src="https://upload.wikimedia.org/wikipedia/commons/2/27/MnistExamples.png">](https://commons.wikimedia.org/wiki/File:MnistExamples.png)
 

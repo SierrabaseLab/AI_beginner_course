@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Install YOLOv5 &mdash; AI_beginner_course 1.0.0 documentation</title>
+  <title>Introduction : jetson-inference &mdash; AI_beginner_course 1.0.0 documentation</title>
   
 
   
@@ -41,7 +41,7 @@
     
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="prev" title="Tutorial : MNIST" href="../Image_Classification/Guide_Line.html" /> 
+    <link rel="prev" title="Indtroduction : MNIST" href="../Image_Classification/Guide_Line.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -94,14 +94,16 @@
 </ul>
 <p class="caption"><span class="caption-text">MNIST:</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../Image_Classification/Guide_Line.html">Tutorial : MNIST</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Image_Classification/Guide_Line.html">Indtroduction : MNIST</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Image_Classification/Guide_Line.html#training-phase">1. Training Phase</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Image_Classification/Guide_Line.html#data-preparation">2. Data Preparation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Image_Classification/Guide_Line.html#inference">3. Inference</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Jetson-Inference:</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Install YOLOv5</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Introduction : jetson-inference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#build-models">1. Build models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#let-s-run-some-files">2. Let’s Run some files</a></li>
 </ul>
 
             
@@ -150,7 +152,7 @@
     
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li>Install YOLOv5</li>
+      <li>Introduction : jetson-inference</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -169,10 +171,89 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="install-yolov5">
-<h1>Install YOLOv5<a class="headerlink" href="#install-yolov5" title="Permalink to this headline">¶</a></h1>
-<p>Then, let’s begin installization with github…</p>
-<p>We’ll use <a class="reference external" href="https://github.com/ultralytics/yolov5">YOLOv5</a> for the object detection</p>
+  <div class="section" id="introduction-jetson-inference">
+<h1>Introduction : jetson-inference<a class="headerlink" href="#introduction-jetson-inference" title="Permalink to this headline">¶</a></h1>
+<p><strong>Jetson Inference</strong> is an opensource to introduce Deep Neural Network models, which can run in real-time and accurately. Especially, this repository uses NVIDIA TensorRT for efficiently deploying neural networks onto the embedded Jetson platform(e.g. nano, tx2, xaiver …), improving performance and power efficiency using graph optimizations, kernel fusion, and FP(Float Precision)16/INT8 precision. In more details, refer to <a class="reference external" href="https://github.com/dusty-nv/jetson-inference">this site(github)</a>.</p>
+<p>Morerover, it supports to</p>
+<ul class="simple">
+<li><p>training (Transfer Learning / Re-training)</p>
+<ul>
+<li><p>Classification</p>
+<ul>
+<li><p>Cat/Dog Dataset</p></li>
+<li><p>PlantCLEF Dataset</p></li>
+<li><p>Your Own Image Dataset</p></li>
+</ul>
+</li>
+<li><p>Object Detection</p>
+<ul>
+<li><p>SSD-Mobilenet Network</p></li>
+<li><p>Your Own Detection Dataset</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Inference</p>
+<ul>
+<li><p>Classification</p>
+<ul>
+<li><p>Imagenet with Image / Video</p></li>
+<li><p>your Own Image</p></li>
+</ul>
+</li>
+<li><p>Object Detection</p>
+<ul>
+<li><p>Face</p></li>
+<li><p>COCO containing dogs, bottles, etc.</p></li>
+</ul>
+</li>
+<li><p>Semantic Segmentation</p>
+<ul>
+<li><p>Cityspcapes Dataset</p></li>
+<li><p>DeepScene Dataset etc.</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="build-models">
+<h1>1. Build models<a class="headerlink" href="#build-models" title="Permalink to this headline">¶</a></h1>
+<p>Note that you need to get ready for download opensource.</p>
+<ol>
+<li><p>Go into <code class="docutils literal notranslate"><span class="pre">AI_beginner_course/DL_course/</span></code> and download opensource.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">cd</span> ..
+$ git clone https://github.com/dusty-nv/jetson-inference
+$ <span class="nb">cd</span> jetson-inference
+$ git submodule update --init
+</pre></div>
+</div>
+</li>
+<li><p>Set some settings for build.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ mkdir build
+$ <span class="nb">cd</span> build
+$ cmake ../
+</pre></div>
+</div>
+</li>
+<li><p>Let’s build and comfile!</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ build
+$ sudo make install
+$ sudo ldconfig
+</pre></div>
+</div>
+</li>
+</ol>
+</div>
+<div class="section" id="let-s-run-some-files">
+<h1>2. Let’s Run some files<a class="headerlink" href="#let-s-run-some-files" title="Permalink to this headline">¶</a></h1>
+<ol class="simple">
+<li><p>Here is a files which trained imagenet Datasets by GoogLeNet</p></li>
+</ol>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">cd</span> aarch64/bin/
+$ python3 imagenet.py /dev/video0
+</pre></div>
+</div>
 </div>
 
 
@@ -181,7 +262,7 @@
           </div>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="../Image_Classification/Guide_Line.html" class="btn btn-neutral float-left" title="Tutorial : MNIST" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../Image_Classification/Guide_Line.html" class="btn btn-neutral float-left" title="Indtroduction : MNIST" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
   <hr/>
