@@ -1,9 +1,15 @@
 ## Install : Prerequisies and Dependencies
-First of all, we need to install "Nvidia Jetson nano toolkit" following the [official instructions](https://developer.nvidia.com/embedded/learn/get-started-jetson-nano-devkit#write)
+First of all, we need to install "Nvidia Jetson nano toolkit" following the [official instructions](https://developer.nvidia.com/embedded/learn/get-started-jetson-nano-devkit#write). 
 
-Before install tensorflow, you have to check Jetpack version(**It is so important!**) The way to check jetpack version is very simple. 
+```
+It might take 7 mins ~ 15 mins.
+(in the case that you downloaded Ether Program and jetson image, already)
+Note that we don't care whatever your OS(e.g. Windows, Linux, Mac) is.
+You need just a desktop which can download faster.
+Also, you can set your jetson ID yourself. (I set SierrabaseCourse.)
+```
 
-Your downloaded zip file will be ```jetson-nano-jp451-sd-card-image.zip```. This means you've installed JetPack 4.5.1 version.
+Before install tensorflow, you have to check Jetpack version (**It is so important!**). The way to check jetpack version is very simple. If your download zip name is ```jetson-nano-jp451-sd-card-image.zip```, this means you've installed JetPack 4.5.1 version.
 
 In my case, these packages are set up
 
@@ -19,7 +25,7 @@ by [this link](https://developer.nvidia.com/embedded/jetpack). If you want to kn
 
 Also, the suitable tensorflow version can be found in [here](https://docs.nvidia.com/deeplearning/frameworks/install-tf-jetson-platform-release-notes/tf-jetson-rel.html#tf-jetson-rel). My tensorflow version is 2.4.0!! 
 
-Now, let's begin installation packages for Jetson nano kit. You must proceed with Jetson nano. Jetson nano OS is based on ```Ubuntu```. So, it may be not diffcult.
+Now, let's begin installation packages for Jetson nano kit. You must proceed with Jetson nano. Jetson nano OS is based on ```Ubuntu```. So, it may be not diffcult. Now, let's open Terminal with commands ('Ctrl' + 'Alt' + 'T').
 
 1. Install System Packages
     ```shell

@@ -7,15 +7,18 @@ Welcome to AI_beginner_course's documentation!
 ==============================================
 
 We indtroduce 
-    - the way to Install Nvidia Jetson nano Devloper kit
-    - the way to Train AI models
-        - **Image Classification**
-            - Tutorial 1 : MNIST
-            - Tutorial 2 : Fashion-MNIST
-        - **Object Detection**
-            - Data Preparation (For Face Detection)
-            - Train with YOLOv5
-            - Inference with Camera
+    - Install Nvidia Jetson nano Devloper kit and it settings
+        - 1. Install Prerequisites and Dependencies for Tensorflow
+        - 2. Donwload Our Projects from Github.
+    - Jetson 
+        - **Do it Yourself : MNIST**
+            - 1. Training Phase
+            - 2. Data Preparation
+            - 3. Inference
+
+        - **Let's Use Opensource : Jetson-Inference**
+            - 1. Build opensource
+            - 2. Inference with Camera
 
 .. toctree::
    :maxdepth: 2
@@ -25,13 +28,13 @@ We indtroduce
 
 .. toctree::
    :maxdepth: 2
-   :caption: Image Classification
+   :caption: MNIST:
 
    Image_Classification/Guide_Line.md
    
 .. toctree::
    :maxdepth: 2
-   :caption: Object_Detection:
+   :caption: Jetson-Inference:
 
    Object_Detection/Guide_Line.md
 

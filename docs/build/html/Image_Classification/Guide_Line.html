@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Tutorial 1 : MNIST &mdash; AI_beginner_course 1.0.0 documentation</title>
+  <title>Tutorial : MNIST &mdash; AI_beginner_course 1.0.0 documentation</title>
   
 
   
@@ -93,12 +93,14 @@
 <li class="toctree-l1"><a class="reference internal" href="../Get_Started.html#install-tensorflow">Install : tensorflow</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Get_Started.html#download-project">Download : Project</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Image Classification</span></p>
+<p class="caption"><span class="caption-text">MNIST:</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Tutorial 1 : MNIST</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#tutorial-2-fashion-mnist">Tutorial 2 : Fashion MNIST</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Tutorial : MNIST</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#training-phase">1. Training Phase</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#data-preparation">2. Data Preparation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#inference">3. Inference</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Object_Detection:</span></p>
+<p class="caption"><span class="caption-text">Jetson-Inference:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../Object_Detection/Guide_Line.html">Install YOLOv5</a></li>
 </ul>
@@ -149,7 +151,7 @@
     
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li>Tutorial 1 : MNIST</li>
+      <li>Tutorial : MNIST</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -168,28 +170,34 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="tutorial-1-mnist">
-<h1>Tutorial 1 : MNIST<a class="headerlink" href="#tutorial-1-mnist" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="tutorial-mnist">
+<h1>Tutorial : MNIST<a class="headerlink" href="#tutorial-mnist" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="https://commons.wikimedia.org/wiki/File:MnistExamples.png"><img src="https://upload.wikimedia.org/wikipedia/commons/2/27/MnistExamples.png"></a></p>
+<p>MNIST(Modified National Institute of Standards and Technology database) is the database of handwritten digits, (<a class="reference external" href="http://yann.lecun.com/exdb/mnist/">visit for this page</a>), which obtains 60,000 training examples and 10,000 test examples. It is basically used for Deep Learning. We aim to classify the numbers from 0 to 9. Furthermore, we test for our handmade digits, with our made Deep Learning models.</p>
+<p>To proceed this course, simply check this :</p>
 <p><em>You need to set directories on <code class="docutils literal notranslate"><span class="pre">{your_directory}/AI_beginner_course/DL_course/Image_Classification</span></code></em></p>
-<p>Don’t forget below line :</p>
+<p>So, don’t forget below line :</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">cd</span> AI_beginner_course/DL_course/Image_Classification/
 </pre></div>
 </div>
-<ol>
-<li><p>Training Phase : See this <a class="reference external" href="https://colab.research.google.com/drive/1cDfsA_no_bLmv5S7217nL0UcEd2nZ1Hr?usp=sharing">link(colab)</a></p>
-<p>We trained 50,000 numbers of images(Open Dataset, MNIST).</p>
+</div>
+<div class="section" id="training-phase">
+<h1>1. Training Phase<a class="headerlink" href="#training-phase" title="Permalink to this headline">¶</a></h1>
+<p>See this <a class="reference external" href="https://colab.research.google.com/drive/1cDfsA_no_bLmv5S7217nL0UcEd2nZ1Hr?usp=sharing">link(colab)</a></p>
+<p>We trained 60,000 numbers of images(Open Dataset, MNIST).</p>
 <p>You may remember the only <code class="docutils literal notranslate"><span class="pre">mnist_99acc_model.h5</span></code> file. (You can <a class="reference external" href="https://docs.google.com/uc?export=download&amp;id=1tTfB7C4Imavg_ppIwXk0DG-cRkA5P_mt">Download here</a>)</p>
 <p>It helps to load model paramters easily.</p>
 <p>(In this course, you can train in colab with GPU for free. It is too hard to train mnist datasets with Jetson Nano toolkits, because of low memories. <strong>I strongly recommend to train with devices having GPUs.</strong>)</p>
-</li>
-<li><p>Data Preparation : See this <a class="reference external" href="https://colab.research.google.com/drive/18eUHkOg5jy2YgugphupEjhuAMmem56uD?usp=sharing">link(colab)</a></p>
+</div>
+<div class="section" id="data-preparation">
+<h1>2. Data Preparation<a class="headerlink" href="#data-preparation" title="Permalink to this headline">¶</a></h1>
+<p>See this <a class="reference external" href="https://colab.research.google.com/drive/18eUHkOg5jy2YgugphupEjhuAMmem56uD?usp=sharing">link(colab)</a></p>
 <p>This helps your handmade datasets to become suitable inputs of this model.</p>
 <p>I wrote this codes about Data Preprocessing.</p>
 <ul>
 <li><p>How to run? (Your directories must be on <code class="docutils literal notranslate"><span class="pre">Image_Classification/</span></code>)</p>
-<ol class="simple">
-<li><p>Prepare only a written number (0 ~ 9)</p></li>
-</ol>
+<ol>
+<li><p>Prepare only a written number (0 ~ 9)</p>
 <p>There are some rules. Keep in mind!</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mf">1.</span> <span class="n">The</span> <span class="n">written</span> <span class="n">number</span> <span class="n">should</span> <span class="n">be</span> <span class="n">enough</span> <span class="n">large</span> <span class="p">(</span><span class="n">Recommend</span> <span class="n">to</span> <span class="n">take</span> <span class="n">over</span> <span class="n">the</span> <span class="mi">60</span><span class="o">%</span> <span class="n">area</span><span class="p">)</span>
 <span class="mf">2.</span> <span class="n">The</span> <span class="n">written</span> <span class="n">number</span> <span class="n">should</span> <span class="n">be</span> <span class="n">the</span> <span class="n">only</span> <span class="n">one</span> <span class="n">number</span>
@@ -202,9 +210,8 @@
 <p><img src="./3.jpg" width="100px" height="50px"> <img src="./7.jpg" width="100px" height ="50px"> <img src="./8.jpg" width="100px" height ="50px"> <img src="./9.jpg" width="100px" height ="50px"></p>
 <p>Then, these result will be</p>
 <p><img alt="index" src="../_images/index.png" /></p>
-<ol class="simple">
-<li><p>Now, let’s Run “Data_Preparation.py”</p></li>
-</ol>
+</li>
+<li><p>Now, let’s Run “Data_Preparation.py”</p>
 <p>Note that we don’t care what the file names are. You only need any “.jpg” files</p>
 <p>At, <code class="docutils literal notranslate"><span class="pre">{your_directory}AI_beginner_course/DL_course/Image_Classification}</span></code>,</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ tree .
@@ -240,9 +247,13 @@
 </pre></div>
 </div>
 </li>
-</ul>
+</ol>
 </li>
-<li><p>Inference : See this <a class="reference external" href="https://colab.research.google.com/drive/18eUHkOg5jy2YgugphupEjhuAMmem56uD?usp=sharing">link(colab)</a> (Same as 2)</p>
+</ul>
+</div>
+<div class="section" id="inference">
+<h1>3. Inference<a class="headerlink" href="#inference" title="Permalink to this headline">¶</a></h1>
+<p>See this <a class="reference external" href="https://colab.research.google.com/drive/18eUHkOg5jy2YgugphupEjhuAMmem56uD?usp=sharing">link(colab)</a> (Same as 2)</p>
 <p>You can test on your written numbers at <code class="docutils literal notranslate"><span class="pre">AI_beginner_course/Image_Classification/Inference.py</span></code>.
 Your written and resized <code class="docutils literal notranslate"><span class="pre">PreProcessed/Preprocessed_i.jpg</span></code> files will be evaluated from saved <code class="docutils literal notranslate"><span class="pre">Image_Classification/mnist_99acc_model.h5</span></code> Anyway,</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ python3 Inference.py
@@ -251,7 +262,7 @@ Your written and resized <code class="docutils literal notranslate"><span class=
 
 In PreProcessed folder, there are files :
  <span class="o">[</span><span class="s1">&#39;PreProcessed/Preprocessed_0.jpg&#39;</span>, <span class="s1">&#39;PreProcessed/Preprocessed_1.jpg&#39;</span>, <span class="s1">&#39;PreProcessed/Preprocessed_2.jpg&#39;</span>, <span class="s1">&#39;PreProcessed/Preprocessed_3.jpg&#39;</span><span class="o">]</span> 
-
+	
 <span class="o">(</span>omit<span class="o">)</span>
 
 From PreProcessed/Preprocessed_0.jpg, We predicted :  <span class="o">[</span><span class="m">3</span><span class="o">]</span> .
@@ -273,13 +284,7 @@ From PreProcessed/Preprocessed_3.jpg, We predicted :  <span class="o">[</span><s
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">export</span> <span class="nv">LD_PRELOAD</span><span class="o">=</span>/usr/lib/aarch64-linux-gnu/libgomp.so.1
 </pre></div>
 </div>
-</li>
-</ol>
 <p>From now on, you’ve checked a simple model training and inference with MNIST!</p>
-</div>
-<div class="section" id="tutorial-2-fashion-mnist">
-<h1>Tutorial 2 : Fashion MNIST<a class="headerlink" href="#tutorial-2-fashion-mnist" title="Permalink to this headline">¶</a></h1>
-<p>We’ll introduce Later</p>
 </div>
 
 

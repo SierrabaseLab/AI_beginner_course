@@ -41,7 +41,7 @@
     
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Tutorial 1 : MNIST" href="Image_Classification/Guide_Line.html" />
+    <link rel="next" title="Tutorial : MNIST" href="Image_Classification/Guide_Line.html" />
     <link rel="prev" title="Welcome to AI_beginner_course’s documentation!" href="index.html" /> 
 </head>
 
@@ -93,12 +93,14 @@
 <li class="toctree-l1"><a class="reference internal" href="#install-tensorflow">Install : tensorflow</a></li>
 <li class="toctree-l1"><a class="reference internal" href="#download-project">Download : Project</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Image Classification</span></p>
+<p class="caption"><span class="caption-text">MNIST:</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="Image_Classification/Guide_Line.html">Tutorial 1 : MNIST</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Image_Classification/Guide_Line.html#tutorial-2-fashion-mnist">Tutorial 2 : Fashion MNIST</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Image_Classification/Guide_Line.html">Tutorial : MNIST</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Image_Classification/Guide_Line.html#training-phase">1. Training Phase</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Image_Classification/Guide_Line.html#data-preparation">2. Data Preparation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Image_Classification/Guide_Line.html#inference">3. Inference</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Object_Detection:</span></p>
+<p class="caption"><span class="caption-text">Jetson-Inference:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="Object_Detection/Guide_Line.html">Install YOLOv5</a></li>
 </ul>
@@ -170,9 +172,15 @@
             
   <div class="section" id="install-prerequisies-and-dependencies">
 <h1>Install : Prerequisies and Dependencies<a class="headerlink" href="#install-prerequisies-and-dependencies" title="Permalink to this headline">¶</a></h1>
-<p>First of all, we need to install “Nvidia Jetson nano toolkit” following the <a class="reference external" href="https://developer.nvidia.com/embedded/learn/get-started-jetson-nano-devkit#write">official instructions</a></p>
-<p>Before install tensorflow, you have to check Jetpack version(<strong>It is so important!</strong>) The way to check jetpack version is very simple.</p>
-<p>Your downloaded zip file will be <code class="docutils literal notranslate"><span class="pre">jetson-nano-jp451-sd-card-image.zip</span></code>. This means you’ve installed JetPack 4.5.1 version.</p>
+<p>First of all, we need to install “Nvidia Jetson nano toolkit” following the <a class="reference external" href="https://developer.nvidia.com/embedded/learn/get-started-jetson-nano-devkit#write">official instructions</a>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">It</span> <span class="n">might</span> <span class="n">take</span> <span class="mi">7</span> <span class="n">mins</span> <span class="o">~</span> <span class="mi">15</span> <span class="n">mins</span><span class="o">.</span>
+<span class="p">(</span><span class="ow">in</span> <span class="n">the</span> <span class="n">case</span> <span class="n">that</span> <span class="n">you</span> <span class="n">downloaded</span> <span class="n">Ether</span> <span class="n">Program</span> <span class="ow">and</span> <span class="n">jetson</span> <span class="n">image</span><span class="p">,</span> <span class="n">already</span><span class="p">)</span>
+<span class="n">Note</span> <span class="n">that</span> <span class="n">we</span> <span class="n">don</span><span class="s1">&#39;t care whatever your OS(e.g. Windows, Linux, Mac) is.</span>
+<span class="n">You</span> <span class="n">need</span> <span class="n">just</span> <span class="n">a</span> <span class="n">desktop</span> <span class="n">which</span> <span class="n">can</span> <span class="n">download</span> <span class="n">faster</span><span class="o">.</span>
+<span class="n">Also</span><span class="p">,</span> <span class="n">you</span> <span class="n">can</span> <span class="nb">set</span> <span class="n">your</span> <span class="n">jetson</span> <span class="n">ID</span> <span class="n">yourself</span><span class="o">.</span> <span class="p">(</span><span class="n">I</span> <span class="nb">set</span> <span class="n">SierrabaseCourse</span><span class="o">.</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Before install tensorflow, you have to check Jetpack version (<strong>It is so important!</strong>). The way to check jetpack version is very simple. If your download zip name is <code class="docutils literal notranslate"><span class="pre">jetson-nano-jp451-sd-card-image.zip</span></code>, this means you’ve installed JetPack 4.5.1 version.</p>
 <p>In my case, these packages are set up</p>
 <ul class="simple">
 <li><p>JetPack 4.5.1</p></li>
@@ -185,7 +193,7 @@
 </ul>
 <p>by <a class="reference external" href="https://developer.nvidia.com/embedded/jetpack">this link</a>. If you want to know older version, <a class="reference external" href="https://developer.nvidia.com/embedded/jetpack-archive">check this site</a></p>
 <p>Also, the suitable tensorflow version can be found in <a class="reference external" href="https://docs.nvidia.com/deeplearning/frameworks/install-tf-jetson-platform-release-notes/tf-jetson-rel.html#tf-jetson-rel">here</a>. My tensorflow version is 2.4.0!!</p>
-<p>Now, let’s begin installation packages for Jetson nano kit. You must proceed with Jetson nano. Jetson nano OS is based on <code class="docutils literal notranslate"><span class="pre">Ubuntu</span></code>. So, it may be not diffcult.</p>
+<p>Now, let’s begin installation packages for Jetson nano kit. You must proceed with Jetson nano. Jetson nano OS is based on <code class="docutils literal notranslate"><span class="pre">Ubuntu</span></code>. So, it may be not diffcult. Now, let’s open Terminal with commands (‘Ctrl’ + ‘Alt’ + ‘T’).</p>
 <ol>
 <li><p>Install System Packages</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ sudo apt-get update
@@ -252,7 +260,7 @@ $ sudo pip3 install -U pip testresources <span class="nv">setuptools</span><span
           </div>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="Image_Classification/Guide_Line.html" class="btn btn-neutral float-right" title="Tutorial 1 : MNIST" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="Image_Classification/Guide_Line.html" class="btn btn-neutral float-right" title="Tutorial : MNIST" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
         <a href="index.html" class="btn btn-neutral float-left" title="Welcome to AI_beginner_course’s documentation!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
