@@ -49,7 +49,7 @@ Note that you need to get ready for download opensource.
 
 	It will take a lot of time( ~ 20 mins).
 
-3. Let's build and comfile!
+3. Let's build and compile!
 
 	```shell
 	$ make -j$(nproc)
