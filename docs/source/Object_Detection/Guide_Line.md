@@ -45,19 +45,25 @@ Note that you need to get ready for download opensource.
 	$ cmake ../
 	```
 
+	You might be confused because of the options of cmake. You can pass all (That is, Just press 'enter'), except for setup 'pytorch'. In this case, I also recommend to **install pytorch**. 
+
+	It will take a lot of time( ~ 20 mins).
+
 3. Let's build and comfile!
 
 	```shell
-	$ build
+	$ make -j$(nproc)
 	$ sudo make install
 	$ sudo ldconfig
 	```
 
 ## 2. Let's Run some files
 
-1. Here is a files which trained imagenet Datasets by GoogLeNet
+1. Here is a files which trained imagenet Datasets by GoogLeNet.
 
-```shell
-$ cd aarch64/bin/
-$ python3 imagenet.py /dev/video0
-```
+	Image Classification - ImageNet - GoogLeNet
+
+	```shell
+	$ cd aarch64/bin/
+	$ python3 imagenet.py /dev/video0
+	```
