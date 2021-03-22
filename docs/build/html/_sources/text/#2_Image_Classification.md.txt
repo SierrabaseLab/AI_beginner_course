@@ -17,7 +17,7 @@ We can train models by just clicking the mouse button. **Therefore, expertise an
 
 The figrues' information is given below. Let's try to **classify images.**
 
-## How to train?
+## 1. How to train
 
 It's so easy. Juet follow them. Whatever you picked any projects, it is not a problem. But, to follow this project, I recommend **"to choose Image Projects"**. You can see the above picture.
 
@@ -35,14 +35,28 @@ It's so easy. Juet follow them. Whatever you picked any projects, it is not a pr
 
 	![Push_train](../Teachable_Machine/train_model.png)
 
-4. You can view your trained results, moreover you can download your datasets and model.
 
-	![Output](../Teachable_Machine/output.gif)
+That's all.
 
-	![Output](../Teachable_Machine/Download_Mymodel.png)
+## 2. Inference and Results
 
+You can view your trained results. Moreover you can download your datasets and model.
 
-Furthermore, you can see any details, such as model parameters, model loss, accuracy and so on...
+![Output](../Teachable_Machine/output.gif)
+
+The picture given below is when you clicked the button "Export model". From "Tensorflow.js" banner, you can refer to url containing model and datasets. Only in "Tensorflow" banner, you can test simply python codes. You need a tensorflow modules. "Tensorflow Lite" supports to mobile or other edge devices.
+
+![Output](../Teachable_Machine/Download_Mymodel.png)
+
+I also made ```{DL_course/Image_Classficiation/Cam_Classify.py}``` for you. So you can also simulate this file. **If you want to experiment your own datasets, then overwrite ```labels.txt``` and ```keras_model.h5``` from ```converted_keras.zip``` file.**
+
+```shell
+$ python3 Cam_Classify.py
+```
+
+You can escape by pushing ```q``` key!!. The FPS of this program will be much low, beacuse Teachable Machine supports GPU remotely. Despite of this, it may operate well.
+
+Anyway, you can see more details, such as model parameters, model loss, accuracy and so on in "Teachable Machine" site...
 
 ## Introduction : MNIST
 

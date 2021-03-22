@@ -99,7 +99,8 @@
 <p class="caption"><span class="caption-text">Image_classifciation:</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Introduction : Teachble Machine</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#how-to-train">How to train?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#how-to-train">1. How to train</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#inference-and-results">2. Inference and Results</a></li>
 <li class="toctree-l1"><a class="reference internal" href="#introduction-mnist">Introduction : MNIST</a></li>
 <li class="toctree-l1"><a class="reference internal" href="#training-phase">1. Training Phase</a></li>
 <li class="toctree-l1"><a class="reference internal" href="#data-preparation">2. Data Preparation</a></li>
@@ -196,7 +197,7 @@
 <p>The figrues’ information is given below. Let’s try to <strong>classify images.</strong></p>
 </div>
 <div class="section" id="how-to-train">
-<h1>How to train?<a class="headerlink" href="#how-to-train" title="Permalink to this headline">¶</a></h1>
+<h1>1. How to train<a class="headerlink" href="#how-to-train" title="Permalink to this headline">¶</a></h1>
 <p>It’s so easy. Juet follow them. Whatever you picked any projects, it is not a problem. But, to follow this project, I recommend <strong>“to choose Image Projects”</strong>. You can see the above picture.</p>
 <ol>
 <li><p>Push “Webcam” Button. (You may modify the class name.)</p>
@@ -209,12 +210,21 @@
 <li><p>If you’ve fininshed to set Image Datasets, then push the “Train Model” Button.</p>
 <p><img alt="Push_train" src="../_images/train_model.png" /></p>
 </li>
-<li><p>You can view your trained results, moreover you can download your datasets and model.</p>
-<p><img alt="Output" src="../_images/output.gif" /></p>
-<p><img alt="Output" src="../_images/Download_Mymodel.png" /></p>
-</li>
 </ol>
-<p>Furthermore, you can see any details, such as model parameters, model loss, accuracy and so on…</p>
+<p>That’s all.</p>
+</div>
+<div class="section" id="inference-and-results">
+<h1>2. Inference and Results<a class="headerlink" href="#inference-and-results" title="Permalink to this headline">¶</a></h1>
+<p>You can view your trained results. Moreover you can download your datasets and model.</p>
+<p><img alt="Output" src="../_images/output.gif" /></p>
+<p>The picture given below is when you clicked the button “Export model”. From “Tensorflow.js” banner, you can refer to url containing model and datasets. Only in “Tensorflow” banner, you can test simply python codes. You need a tensorflow modules. “Tensorflow Lite” supports to mobile or other edge devices.</p>
+<p><img alt="Output" src="../_images/Download_Mymodel.png" /></p>
+<p>I also made <code class="docutils literal notranslate"><span class="pre">{DL_course/Image_Classficiation/Cam_Classify.py}</span></code> for you. So you can also simulate this file. <strong>If you want to experiment your own datasets, then overwrite <code class="docutils literal notranslate"><span class="pre">labels.txt</span></code> and <code class="docutils literal notranslate"><span class="pre">keras_model.h5</span></code> from <code class="docutils literal notranslate"><span class="pre">converted_keras.zip</span></code> file.</strong></p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ python3 Cam_Classify.py
+</pre></div>
+</div>
+<p>You can escape by pushing <code class="docutils literal notranslate"><span class="pre">q</span></code> key!!. The FPS of this program will be much low, beacuse Teachable Machine supports GPU remotely. Despite of this, it may operate well.</p>
+<p>Anyway, you can see more details, such as model parameters, model loss, accuracy and so on in “Teachable Machine” site…</p>
 </div>
 <div class="section" id="introduction-mnist">
 <h1>Introduction : MNIST<a class="headerlink" href="#introduction-mnist" title="Permalink to this headline">¶</a></h1>
