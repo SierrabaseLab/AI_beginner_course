@@ -105,6 +105,7 @@
 <li class="toctree-l1"><a class="reference internal" href="#training-phase">1. Training Phase</a></li>
 <li class="toctree-l1"><a class="reference internal" href="#data-preparation">2. Data Preparation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="#inference">3. Inference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#faq">FAQ</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Jetson_Opensources:</span></p>
 <ul>
@@ -330,12 +331,14 @@ From PreProcessed/Preprocessed_2.jpg, We predicted :  <span class="o">[</span><s
 From PreProcessed/Preprocessed_3.jpg, We predicted :  <span class="o">[</span><span class="m">4</span><span class="o">]</span> .
 </pre></div>
 </div>
-<p>(QnA)</p>
+</div>
+<div class="section" id="faq">
+<h1>FAQ<a class="headerlink" href="#faq" title="Permalink to this headline">¶</a></h1>
 <p>Q. I got a problem with :</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>ImportError: /usr/lib/aarch64-linux-gnu/libgomp.so.1: cannot allocate memory <span class="k">in</span> static TLS block
 </pre></div>
 </div>
-<p>What should I do?</p>
+<p>Then, what should I do?</p>
 <p>A. Add at shell</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">export</span> <span class="nv">LD_PRELOAD</span><span class="o">=</span>/usr/lib/aarch64-linux-gnu/libgomp.so.1
 </pre></div>

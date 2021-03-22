@@ -184,13 +184,13 @@ From PreProcessed/Preprocessed_2.jpg, We predicted :  [8] .
 From PreProcessed/Preprocessed_3.jpg, We predicted :  [4] .
 ```
 	
-(QnA)
+## FAQ
 
 Q. I got a problem with :
 ```shell
 ImportError: /usr/lib/aarch64-linux-gnu/libgomp.so.1: cannot allocate memory in static TLS block
 ```
-What should I do?
+Then, what should I do?
 
 A. Add at shell
 ```shell
