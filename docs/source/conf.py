@@ -81,6 +81,7 @@ pygments_style = None
 # a list of builtin themes.
 #
 html_theme = 'sphinx_rtd_theme'
+html_logo = 'SierraBASE.png'
 html_favicon = 'SierraBASE.png'
 html_baseurl = 'https://sierrabaselab.github.io/AI_beginner_course/'
 # Theme options are theme-specific and customize the look and feel of a theme
