@@ -2,7 +2,7 @@
 
 ![introduction1](../Teachable_Machine/Introduce1.png)
 
-This is made by google Developement Team. [Teachable Machine](https://teachablemachine.withgoogle.com/) is a web-based tool that makes creating machine learning models fast, easy, and accessible to everyone. It trains a model to recognize your own 
+This is made by [Google CreativeLab](https://github.com/googlecreativelab) Team. [Teachable Machine](https://teachablemachine.withgoogle.com/) is a web-based tool that makes creating machine learning models fast, easy, and accessible to everyone. It trains a model to recognize your own 
 
 - images
 - sounds
