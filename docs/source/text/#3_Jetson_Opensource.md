@@ -64,8 +64,11 @@ Note that you need to get ready for download opensource.
 
 	**Just press ```enter```**(Recommend). If you want to download all, you can select menu, where contains "all models", by pressing ```spacebar```.
 
-	Moreover, I recommend to select to install ```pytorch```
+	![Model_select1](../Jetson/model_list1.png)
 
+	Moreover, in this case, I recommend to select to install ```pytorch```
+
+	![Model_select2](../Jetson/model_list2.png)
 
 	It will take a lot of time( ~ 20 mins).
 
@@ -81,27 +84,32 @@ Note that you need to get ready for download opensource.
 
 Let's check the results of pretrained models.
 
-1. Image Classification - [ImageNet](http://www.image-net.org/)
+* Image Classification - [ImageNet](http://www.image-net.org/)
 
-	Here it is a basic step)
+Here it is a basic step :
 
-	```shell
-	$ cd aarch64/bin/
-	$ python3 imagenet.py /dev/video0
-	```
+```shell
+$ cd aarch64/bin/
+$ python3 imagenet.py /dev/video0
+```
 
-	Note that the default option of ```imagenet.py``` file is "network=GoogLeNet". and "/dev/video0" means your data input sources. Espeically, it means you'll try a ```USB viedo Camera```.
+And here is a result,
 
-	You can change other models. Then, let's change the other model, ResNet-18!!
+![image_classification](../Jetson/image_classification.png)
 
-	```shell
-	$ python3 imagenet.py --network=resnet-18 /dev/video0
-	```
-	
-	There is a table shows jetson-inference repository supports.
-	
+Note that the default option of ```imagenet.py``` file is ```network=GoogLeNet```
+On the other hand, the location ```/dev/video0``` indicates your input sources. That is, you used **USB CAMERA**
+
+You can change other models. Then, let's change the other model, ```ResNet-18```!!
+
+```shell
+$ python3 imagenet.py --network=resnet-18 /dev/video0
+```
+
+There is a table shows jetson-inference repository supports.
+
 | Network       | CLI argument   | NetworkType enum |
-|---------------|----------------|------------------|
+|:-------------:|----------------|------------------|
 | AlexNet       | `alexnet`      | `ALEXNET`        |
 | GoogleNet     | `googlenet`    | `GOOGLENET`      |
 | GoogleNet-12  | `googlenet-12` | `GOOGLENET_12`   |
@@ -113,34 +121,73 @@ Let's check the results of pretrained models.
 | VGG-19        | `vgg-19`       | `VGG-19`         |
 | Inception-v4  | `inception-v4` | `INCEPTION_V4`   |
 
+You could see the various models before build makes. In details, please visit [this github site](https://github.com/dusty-nv/jetson-inference).
 
-	You could see the various models before build makes. In details, please visit [this github site](https://github.com/dusty-nv/jetson-inference).
-
-2. Object Detection 
+* Object Detection 
 	
-	Object Detection models show the bounded boxes we trained. 
-	
-	```shell
-	$ python3 detectnet.py /dev/video0
-	```
-	
-	In this case, we can check the default network is SSD-MobileNet-V2. and the below table is network model list. and [COCO](https://cocodataset.org/#home) is the most used Image Datasets. There are many labelings(Person, chair, animals, ... and so on) in COCO Datasets. For training them, we need much times and expensive devices. So we simply introduce object detection's inference.
+Object Detection models show the bounded boxes we trained. 
 
-	| Network                 | CLI argument       | NetworkType enum   | Object classes       |
-	| ------------------------|--------------------|--------------------|----------------------|
-	| SSD-Mobilenet-v1        | `ssd-mobilenet-v1` | `SSD_MOBILENET_V1` | 91 CoCo classes	   |
-	| SSD-Mobilenet-v2        | `ssd-mobilenet-v2` | `SSD_MOBILENET_V2` | 91 CoCo classes      |
-	| SSD-Inception-v2        | `ssd-inception-v2` | `SSD_INCEPTION_V2` | 91 CoCo classes      |
-	| DetectNet-COCO-Dog      | `coco-dog`         | `COCO_DOG`         | dogs                 |
-	| DetectNet-COCO-Bottle   | `coco-bottle`      | `COCO_BOTTLE`      | bottles              |
-	| DetectNet-COCO-Chair    | `coco-chair`       | `COCO_CHAIR`       | chairs               |
-	| DetectNet-COCO-Airplane | `coco-airplane`    | `COCO_AIRPLANE`    | airplanes            |
-	| ped-100                 | `pednet`           | `PEDNET`           | pedestrians          |
-	| multiped-500            | `multiped`         | `PEDNET_MULTI`     | pedestrians, luggage |
-	| facenet-120             | `facenet`          | `FACENET`          | faces                |
+```shell
+$ python3 detectnet.py /dev/video0
+```
 
-3. Semantic Segmentation.
+Then, the result will be,
 
-	Object 
+![object_detection](../Jetson/object_detection.png)
 
-## Introduction : NVIDIA
+In this case, we can check the default network is SSD-MobileNet-V2. and the below table is network model list. and [COCO](https://cocodataset.org/#home) is the most used Image Datasets. There are many labelings (Person, chair, animals, ... and so on) in COCO Datasets. For training them, we need much times and expensive devices. So we simply introduce object detection's inference.
+
+| Network                 | CLI argument       | NetworkType enum   | Object classes       |
+| ------------------------|--------------------|--------------------|----------------------|
+| SSD-Mobilenet-v1        | `ssd-mobilenet-v1` | `SSD_MOBILENET_V1` | 91 (COCO classes)	   |
+| SSD-Mobilenet-v2        | `ssd-mobilenet-v2` | `SSD_MOBILENET_V2` | 91 (COCO classes)    |
+| SSD-Inception-v2        | `ssd-inception-v2` | `SSD_INCEPTION_V2` | 91 (COCO classes)    |
+| DetectNet-COCO-Dog      | `coco-dog`         | `COCO_DOG`         | dogs                 |
+| DetectNet-COCO-Bottle   | `coco-bottle`      | `COCO_BOTTLE`      | bottles              |
+| DetectNet-COCO-Chair    | `coco-chair`       | `COCO_CHAIR`       | chairs               |
+| DetectNet-COCO-Airplane | `coco-airplane`    | `COCO_AIRPLANE`    | airplanes            |
+| ped-100                 | `pednet`           | `PEDNET`           | pedestrians          |
+| multiped-500            | `multiped`         | `PEDNET_MULTI`     | pedestrians, luggage |
+| facenet-120             | `facenet`          | `FACENET`          | faces                |
+
+You may choose other networks. Copy from the CLI argument of the table. This is an example to detect our face.
+
+```shell
+$ python3 detectnet.py --network=facenet /dev/video0
+```
+
+* Semantic Segmentation.
+
+Semantic Segmentation models can show the more accurate area to express objects. 
+
+The default model is ```FCN-ResNet18-Pascal-VOC-320x320```
+
+```shell
+$ python3 segnet.py /dev/video0
+```
+
+| Dataset      | Resolution | CLI Argument |
+|:------------:|:----------:|--------------|
+| [Cityscapes](https://www.cityscapes-dataset.com/) | 512x256 | `fcn-resnet18-cityscapes-512x256` | 
+| [Cityscapes](https://www.cityscapes-dataset.com/) | 1024x512 | `fcn-resnet18-cityscapes-1024x512` |
+| [Cityscapes](https://www.cityscapes-dataset.com/) | 2048x1024 | `fcn-resnet18-cityscapes-2048x1024` |
+| [DeepScene](http://deepscene.cs.uni-freiburg.de/) | 576x320 | `fcn-resnet18-deepscene-576x320` |
+| [DeepScene](http://deepscene.cs.uni-freiburg.de/) | 864x480 | `fcn-resnet18-deepscene-864x480` |
+| [Multi-Human](https://lv-mhp.github.io/) | 512x320 | `fcn-resnet18-mhp-512x320` |
+| [Multi-Human](https://lv-mhp.github.io/) | 640x360 | `fcn-resnet18-mhp-512x320` |
+| [Pascal VOC](http://host.robots.ox.ac.uk/pascal/VOC/) | 320x320 | `fcn-resnet18-voc-320x320` |
+| [Pascal VOC](http://host.robots.ox.ac.uk/pascal/VOC/) | 512x320 | `fcn-resnet18-voc-512x320` |
+| [SUN RGB-D](http://rgbd.cs.princeton.edu/) | 512x400 | `fcn-resnet18-sun-512x400` |
+| [SUN RGB-D](http://rgbd.cs.princeton.edu/) | 640x512 | `fcn-resnet18-sun-640x512` |
+
+the another installed network is ```FCN-ResNet18-DeepScene-576x320``` Let's try this.
+
+```shell
+$ python3 segnet.py --network=fcn-resnet18-deepscene-576x320 /dev/video0
+```
+
+
+
+## Introduction : NVIDIA DeepStream
+
+WE CHECK IT LATER! (BECAUSE WE HAVE TO CHECK LICENSE...)

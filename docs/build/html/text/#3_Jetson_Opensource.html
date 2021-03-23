@@ -111,7 +111,7 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Introduction : Jetson-Inference</a></li>
 <li class="toctree-l1"><a class="reference internal" href="#build-models">1. Build models</a></li>
 <li class="toctree-l1"><a class="reference internal" href="#let-s-run-some-files">2. Let’s Run some files</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#introduction-nvidia">Introduction : NVIDIA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#introduction-nvidia-deepstream">Introduction : NVIDIA DeepStream</a></li>
 </ul>
 
             
@@ -270,7 +270,9 @@ $ cmake ../
 </li>
 </ul>
 <p><strong>Just press <code class="docutils literal notranslate"><span class="pre">enter</span></code></strong>(Recommend). If you want to download all, you can select menu, where contains “all models”, by pressing <code class="docutils literal notranslate"><span class="pre">spacebar</span></code>.</p>
-<p>Moreover, I recommend to select to install <code class="docutils literal notranslate"><span class="pre">pytorch</span></code></p>
+<p><img alt="Model_select1" src="../_images/model_list1.png" /></p>
+<p>Moreover, in this case, I recommend to select to install <code class="docutils literal notranslate"><span class="pre">pytorch</span></code></p>
+<p><img alt="Model_select2" src="../_images/model_list2.png" /></p>
 <p>It will take a lot of time( ~ 20 mins).</p>
 </li>
 <li><p>Let’s build and compile!</p>
@@ -285,63 +287,250 @@ $ sudo ldconfig
 <div class="section" id="let-s-run-some-files">
 <h1>2. Let’s Run some files<a class="headerlink" href="#let-s-run-some-files" title="Permalink to this headline">¶</a></h1>
 <p>Let’s check the results of pretrained models.</p>
-<ol>
-<li><p>Image Classification - <a class="reference external" href="http://www.image-net.org/">ImageNet</a></p>
-<p>Here it is a basic step)</p>
+<ul class="simple">
+<li><p>Image Classification - <a class="reference external" href="http://www.image-net.org/">ImageNet</a></p></li>
+</ul>
+<p>Here it is a basic step :</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">cd</span> aarch64/bin/
 $ python3 imagenet.py /dev/video0
 </pre></div>
 </div>
-<p>Note that the default option of <code class="docutils literal notranslate"><span class="pre">imagenet.py</span></code> file is “network=GoogLeNet”. and “/dev/video0” means your data input sources. Espeically, it means you’ll try a <code class="docutils literal notranslate"><span class="pre">USB</span> <span class="pre">viedo</span> <span class="pre">Camera</span></code>.</p>
-<p>You can change other models. Then, let’s change the other model, ResNet-18!!</p>
+<p>And here is a result,</p>
+<p><img alt="image_classification" src="../_images/image_classification.png" /></p>
+<p>Note that the default option of <code class="docutils literal notranslate"><span class="pre">imagenet.py</span></code> file is <code class="docutils literal notranslate"><span class="pre">network=GoogLeNet</span></code>
+On the other hand, the location <code class="docutils literal notranslate"><span class="pre">/dev/video0</span></code> indicates your input sources. That is, you used <strong>USB CAMERA</strong></p>
+<p>You can change other models. Then, let’s change the other model, <code class="docutils literal notranslate"><span class="pre">ResNet-18</span></code>!!</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ python3 imagenet.py --network<span class="o">=</span>resnet-18 /dev/video0
 </pre></div>
 </div>
 <p>There is a table shows jetson-inference repository supports.</p>
-</li>
-</ol>
-<p>| Network       | CLI argument   | NetworkType enum |
-|—————|—————-|——————|
-| AlexNet       | <code class="docutils literal notranslate"><span class="pre">alexnet</span></code>      | <code class="docutils literal notranslate"><span class="pre">ALEXNET</span></code>        |
-| GoogleNet     | <code class="docutils literal notranslate"><span class="pre">googlenet</span></code>    | <code class="docutils literal notranslate"><span class="pre">GOOGLENET</span></code>      |
-| GoogleNet-12  | <code class="docutils literal notranslate"><span class="pre">googlenet-12</span></code> | <code class="docutils literal notranslate"><span class="pre">GOOGLENET_12</span></code>   |
-| ResNet-18     | <code class="docutils literal notranslate"><span class="pre">resnet-18</span></code>    | <code class="docutils literal notranslate"><span class="pre">RESNET_18</span></code>      |
-| ResNet-50     | <code class="docutils literal notranslate"><span class="pre">resnet-50</span></code>    | <code class="docutils literal notranslate"><span class="pre">RESNET_50</span></code>      |
-| ResNet-101    | <code class="docutils literal notranslate"><span class="pre">resnet-101</span></code>   | <code class="docutils literal notranslate"><span class="pre">RESNET_101</span></code>     |
-| ResNet-152    | <code class="docutils literal notranslate"><span class="pre">resnet-152</span></code>   | <code class="docutils literal notranslate"><span class="pre">RESNET_152</span></code>     |
-| VGG-16        | <code class="docutils literal notranslate"><span class="pre">vgg-16</span></code>       | <code class="docutils literal notranslate"><span class="pre">VGG-16</span></code>         |
-| VGG-19        | <code class="docutils literal notranslate"><span class="pre">vgg-19</span></code>       | <code class="docutils literal notranslate"><span class="pre">VGG-19</span></code>         |
-| Inception-v4  | <code class="docutils literal notranslate"><span class="pre">inception-v4</span></code> | <code class="docutils literal notranslate"><span class="pre">INCEPTION_V4</span></code>   |</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">You</span> <span class="n">could</span> <span class="n">see</span> <span class="n">the</span> <span class="n">various</span> <span class="n">models</span> <span class="n">before</span> <span class="n">build</span> <span class="n">makes</span><span class="o">.</span> <span class="n">In</span> <span class="n">details</span><span class="p">,</span> <span class="n">please</span> <span class="n">visit</span> <span class="p">[</span><span class="n">this</span> <span class="n">github</span> <span class="n">site</span><span class="p">](</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">dusty</span><span class="o">-</span><span class="n">nv</span><span class="o">/</span><span class="n">jetson</span><span class="o">-</span><span class="n">inference</span><span class="p">)</span><span class="o">.</span>
-</pre></div>
-</div>
-<ol>
-<li><p>Object Detection</p>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th align="center">Network</th>
+<th>CLI argument</th>
+<th>NetworkType enum</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">AlexNet</td>
+<td><code>alexnet</code></td>
+<td><code>ALEXNET</code></td>
+</tr>
+<tr>
+<td align="center">GoogleNet</td>
+<td><code>googlenet</code></td>
+<td><code>GOOGLENET</code></td>
+</tr>
+<tr>
+<td align="center">GoogleNet-12</td>
+<td><code>googlenet-12</code></td>
+<td><code>GOOGLENET_12</code></td>
+</tr>
+<tr>
+<td align="center">ResNet-18</td>
+<td><code>resnet-18</code></td>
+<td><code>RESNET_18</code></td>
+</tr>
+<tr>
+<td align="center">ResNet-50</td>
+<td><code>resnet-50</code></td>
+<td><code>RESNET_50</code></td>
+</tr>
+<tr>
+<td align="center">ResNet-101</td>
+<td><code>resnet-101</code></td>
+<td><code>RESNET_101</code></td>
+</tr>
+<tr>
+<td align="center">ResNet-152</td>
+<td><code>resnet-152</code></td>
+<td><code>RESNET_152</code></td>
+</tr>
+<tr>
+<td align="center">VGG-16</td>
+<td><code>vgg-16</code></td>
+<td><code>VGG-16</code></td>
+</tr>
+<tr>
+<td align="center">VGG-19</td>
+<td><code>vgg-19</code></td>
+<td><code>VGG-19</code></td>
+</tr>
+<tr>
+<td align="center">Inception-v4</td>
+<td><code>inception-v4</code></td>
+<td><code>INCEPTION_V4</code></td>
+</tr>
+</tbody>
+</table><p>You could see the various models before build makes. In details, please visit <a class="reference external" href="https://github.com/dusty-nv/jetson-inference">this github site</a>.</p>
+<ul class="simple">
+<li><p>Object Detection</p></li>
+</ul>
 <p>Object Detection models show the bounded boxes we trained.</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ python3 detectnet.py /dev/video0
 </pre></div>
 </div>
-<p>In this case, we can check the default network is SSD-MobileNet-V2. and the below table is network model list. and <a class="reference external" href="https://cocodataset.org/#home">COCO</a> is the most used Image Datasets. There are many labelings(Person, chair, animals, … and so on) in COCO Datasets. For training them, we need much times and expensive devices. So we simply introduce object detection’s inference.</p>
-<p>| Network                 | CLI argument       | NetworkType enum   | Object classes       |
-| ————————|——————–|——————–|———————-|
-| SSD-Mobilenet-v1        | <code class="docutils literal notranslate"><span class="pre">ssd-mobilenet-v1</span></code> | <code class="docutils literal notranslate"><span class="pre">SSD_MOBILENET_V1</span></code> | 91 CoCo classes	   |
-| SSD-Mobilenet-v2        | <code class="docutils literal notranslate"><span class="pre">ssd-mobilenet-v2</span></code> | <code class="docutils literal notranslate"><span class="pre">SSD_MOBILENET_V2</span></code> | 91 CoCo classes      |
-| SSD-Inception-v2        | <code class="docutils literal notranslate"><span class="pre">ssd-inception-v2</span></code> | <code class="docutils literal notranslate"><span class="pre">SSD_INCEPTION_V2</span></code> | 91 CoCo classes      |
-| DetectNet-COCO-Dog      | <code class="docutils literal notranslate"><span class="pre">coco-dog</span></code>         | <code class="docutils literal notranslate"><span class="pre">COCO_DOG</span></code>         | dogs                 |
-| DetectNet-COCO-Bottle   | <code class="docutils literal notranslate"><span class="pre">coco-bottle</span></code>      | <code class="docutils literal notranslate"><span class="pre">COCO_BOTTLE</span></code>      | bottles              |
-| DetectNet-COCO-Chair    | <code class="docutils literal notranslate"><span class="pre">coco-chair</span></code>       | <code class="docutils literal notranslate"><span class="pre">COCO_CHAIR</span></code>       | chairs               |
-| DetectNet-COCO-Airplane | <code class="docutils literal notranslate"><span class="pre">coco-airplane</span></code>    | <code class="docutils literal notranslate"><span class="pre">COCO_AIRPLANE</span></code>    | airplanes            |
-| ped-100                 | <code class="docutils literal notranslate"><span class="pre">pednet</span></code>           | <code class="docutils literal notranslate"><span class="pre">PEDNET</span></code>           | pedestrians          |
-| multiped-500            | <code class="docutils literal notranslate"><span class="pre">multiped</span></code>         | <code class="docutils literal notranslate"><span class="pre">PEDNET_MULTI</span></code>     | pedestrians, luggage |
-| facenet-120             | <code class="docutils literal notranslate"><span class="pre">facenet</span></code>          | <code class="docutils literal notranslate"><span class="pre">FACENET</span></code>          | faces                |</p>
-</li>
-<li><p>Semantic Segmentation.</p>
-<p>Object</p>
-</li>
-</ol>
+<p>Then, the result will be,</p>
+<p><img alt="object_detection" src="../_images/object_detection.png" /></p>
+<p>In this case, we can check the default network is SSD-MobileNet-V2. and the below table is network model list. and <a class="reference external" href="https://cocodataset.org/#home">COCO</a> is the most used Image Datasets. There are many labelings (Person, chair, animals, … and so on) in COCO Datasets. For training them, we need much times and expensive devices. So we simply introduce object detection’s inference.</p>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th>Network</th>
+<th>CLI argument</th>
+<th>NetworkType enum</th>
+<th>Object classes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SSD-Mobilenet-v1</td>
+<td><code>ssd-mobilenet-v1</code></td>
+<td><code>SSD_MOBILENET_V1</code></td>
+<td>91 (COCO classes)</td>
+</tr>
+<tr>
+<td>SSD-Mobilenet-v2</td>
+<td><code>ssd-mobilenet-v2</code></td>
+<td><code>SSD_MOBILENET_V2</code></td>
+<td>91 (COCO classes)</td>
+</tr>
+<tr>
+<td>SSD-Inception-v2</td>
+<td><code>ssd-inception-v2</code></td>
+<td><code>SSD_INCEPTION_V2</code></td>
+<td>91 (COCO classes)</td>
+</tr>
+<tr>
+<td>DetectNet-COCO-Dog</td>
+<td><code>coco-dog</code></td>
+<td><code>COCO_DOG</code></td>
+<td>dogs</td>
+</tr>
+<tr>
+<td>DetectNet-COCO-Bottle</td>
+<td><code>coco-bottle</code></td>
+<td><code>COCO_BOTTLE</code></td>
+<td>bottles</td>
+</tr>
+<tr>
+<td>DetectNet-COCO-Chair</td>
+<td><code>coco-chair</code></td>
+<td><code>COCO_CHAIR</code></td>
+<td>chairs</td>
+</tr>
+<tr>
+<td>DetectNet-COCO-Airplane</td>
+<td><code>coco-airplane</code></td>
+<td><code>COCO_AIRPLANE</code></td>
+<td>airplanes</td>
+</tr>
+<tr>
+<td>ped-100</td>
+<td><code>pednet</code></td>
+<td><code>PEDNET</code></td>
+<td>pedestrians</td>
+</tr>
+<tr>
+<td>multiped-500</td>
+<td><code>multiped</code></td>
+<td><code>PEDNET_MULTI</code></td>
+<td>pedestrians, luggage</td>
+</tr>
+<tr>
+<td>facenet-120</td>
+<td><code>facenet</code></td>
+<td><code>FACENET</code></td>
+<td>faces</td>
+</tr>
+</tbody>
+</table><p>You may choose other networks. Copy from the CLI argument of the table. This is an example to detect our face.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ python3 detectnet.py --network<span class="o">=</span>facenet /dev/video0
+</pre></div>
 </div>
-<div class="section" id="introduction-nvidia">
-<h1>Introduction : NVIDIA<a class="headerlink" href="#introduction-nvidia" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>Semantic Segmentation.</p></li>
+</ul>
+<p>Semantic Segmentation models can show the more accurate area to express objects.</p>
+<p>The default model is <code class="docutils literal notranslate"><span class="pre">FCN-ResNet18-Pascal-VOC-320x320</span></code></p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ python3 segnet.py /dev/video0
+</pre></div>
+</div>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th align="center">Dataset</th>
+<th align="center">Resolution</th>
+<th>CLI Argument</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><a href="https://www.cityscapes-dataset.com/">Cityscapes</a></td>
+<td align="center">512x256</td>
+<td><code>fcn-resnet18-cityscapes-512x256</code></td>
+</tr>
+<tr>
+<td align="center"><a href="https://www.cityscapes-dataset.com/">Cityscapes</a></td>
+<td align="center">1024x512</td>
+<td><code>fcn-resnet18-cityscapes-1024x512</code></td>
+</tr>
+<tr>
+<td align="center"><a href="https://www.cityscapes-dataset.com/">Cityscapes</a></td>
+<td align="center">2048x1024</td>
+<td><code>fcn-resnet18-cityscapes-2048x1024</code></td>
+</tr>
+<tr>
+<td align="center"><a href="http://deepscene.cs.uni-freiburg.de/">DeepScene</a></td>
+<td align="center">576x320</td>
+<td><code>fcn-resnet18-deepscene-576x320</code></td>
+</tr>
+<tr>
+<td align="center"><a href="http://deepscene.cs.uni-freiburg.de/">DeepScene</a></td>
+<td align="center">864x480</td>
+<td><code>fcn-resnet18-deepscene-864x480</code></td>
+</tr>
+<tr>
+<td align="center"><a href="https://lv-mhp.github.io/">Multi-Human</a></td>
+<td align="center">512x320</td>
+<td><code>fcn-resnet18-mhp-512x320</code></td>
+</tr>
+<tr>
+<td align="center"><a href="https://lv-mhp.github.io/">Multi-Human</a></td>
+<td align="center">640x360</td>
+<td><code>fcn-resnet18-mhp-512x320</code></td>
+</tr>
+<tr>
+<td align="center"><a href="http://host.robots.ox.ac.uk/pascal/VOC/">Pascal VOC</a></td>
+<td align="center">320x320</td>
+<td><code>fcn-resnet18-voc-320x320</code></td>
+</tr>
+<tr>
+<td align="center"><a href="http://host.robots.ox.ac.uk/pascal/VOC/">Pascal VOC</a></td>
+<td align="center">512x320</td>
+<td><code>fcn-resnet18-voc-512x320</code></td>
+</tr>
+<tr>
+<td align="center"><a href="http://rgbd.cs.princeton.edu/">SUN RGB-D</a></td>
+<td align="center">512x400</td>
+<td><code>fcn-resnet18-sun-512x400</code></td>
+</tr>
+<tr>
+<td align="center"><a href="http://rgbd.cs.princeton.edu/">SUN RGB-D</a></td>
+<td align="center">640x512</td>
+<td><code>fcn-resnet18-sun-640x512</code></td>
+</tr>
+</tbody>
+</table><p>the another installed network is <code class="docutils literal notranslate"><span class="pre">FCN-ResNet18-DeepScene-576x320</span></code> Let’s try this.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ python3 segnet.py --network<span class="o">=</span>fcn-resnet18-deepscene-576x320 /dev/video0
+</pre></div>
+</div>
+</div>
+<div class="section" id="introduction-nvidia-deepstream">
+<h1>Introduction : NVIDIA DeepStream<a class="headerlink" href="#introduction-nvidia-deepstream" title="Permalink to this headline">¶</a></h1>
+<p>WE CHECK IT LATER! (BECAUSE WE HAVE TO CHECK LICENSE…)</p>
 </div>
 
 
