@@ -1,5 +1,7 @@
 ## Introduction : Jetson-Inference
 
+![<img src="https://developer.nvidia.com/embedded/twodaystoademo">](../Jetson/Jetson_Inference_Tutorial.jpg)
+
 ```Jetson Inference``` is an opensource to introduce Deep Neural Network models, which can run in real-time and accurately. Especially, this repository uses NVIDIA TensorRT for efficiently deploying neural networks onto the embedded Jetson platform(e.g. nano, tx2, xaiver ...), improving performance and power efficiency using graph optimizations, kernel fusion, and FP(Float Precision)16/INT8 precision. In more details, refer to [this site(github)](https://github.com/dusty-nv/jetson-inference).
 
 Morerover, it supports to
