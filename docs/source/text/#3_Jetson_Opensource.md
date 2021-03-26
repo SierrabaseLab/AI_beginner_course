@@ -200,7 +200,7 @@ So, I introduce the [Unsupervised Deep Tracking, UDT](https://openaccess.thecvf.
 
 Anyway, we can enjoy this tacking algorithms, by ```drag-and-drop``` a	nd ```enter``` key. I modified this code from [here](https://github.com/594422814/UDT_pytorch). You can also find the summary from  [AI_beginner_course/DL_cousre/Object_Tracking/README.md](https://github.com/SierrabaseLab/AI_beginner_course/blob/master/DL_course/Object_Tracking/README.md) file.	
 
-## Let's run UDT.py
+## 0. Let's run UDT.py
 
 This phase is very simple. So I recommend to expriment very various inputs.
 
