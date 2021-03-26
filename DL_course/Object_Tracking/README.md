@@ -71,8 +71,8 @@ And ,there is a his citation;
 
 		Use ```--input_source {your files} ``` or ```--input_source={your_files}```/
 
-		```shell
-		$ python3 UDT.py --input_source 
+		```shell	
+		$ python3 UDT.py --input_source bag.avi
 		```
 
 
