@@ -190,6 +190,76 @@ $ python3 segnet.py --network=fcn-resnet18-deepscene-576x320 /dev/video0
 
 
 
-## Introduction : NVIDIA DeepStream
+## Introduction : Object Tracking(UDT)
 
-WE CHECK IT LATER! (BECAUSE WE HAVE TO CHECK LICENSE...)
+The **Object Tracking Algorithm** means the task to take the first initial set from Object Detection results, to create an unique ID for the firstly detected result respectly, and to track these obejcts by Video(Image Sqequence). A lot of Tracking algorithms are proposed. However, to inference still fast and accurate in Jetson nano, we need to get the much light models.
+
+![UDT_gituhb](../Tracking/UDT_Capture.png)
+
+So, I introduce the [Unsupervised Deep Tracking, UDT](https://openaccess.thecvf.com/content_CVPR_2019/html/Wang_Unsupervised_Deep_Tracking_CVPR_2019_paper.html) Algorithm(2019). From this model, we obtain the fact that **FPS** is 70, and **ACU Score** is 59.4%. It is very high score to compare other Supervised-based tracking methods.
+
+Anyway, we can enjoy this tacking algorithms, by ```drag-and-drop``` and ```enter``` key. I modified this code from [here](https://github.com/594422814/UDT_pytorch). You can also find the summary from  ```AI_beginner_course/DL_cousre/Object_Tracking/README.md``` file.	
+
+## Let's run UDT.py
+
+This phase is very simple. So I recommend to expriment very various inputs.
+
+1. Go into Object Tracking files.
+
+	```shell
+	$ cd ../../../../Object_Tracking/
+	```
+
+	Or if you're confused your path, then it is also a good way to start from home directory!!
+	```shell
+	# My_Project_Name is "SierrabaseLab"
+	$ cd /home/{Your_Project_Name}/AI_beginner_course/DL_course/Object_Tracking/
+
+2. You Remember only ```UDT.py```
+
+	That is, just run :
+
+	```shell
+	$ python3 UDT.py
+	```
+
+	Then, the image would be captured. In this frame, you must 
+		- 1. Drag-and-Drop
+		- 2. Press ```enter``` key
+
+	It is a process called **Region Proposal**
+
+	![input](../Tracking/UDT_Capture.png)
+
+	If you've completed, then tracking algorithms will be started.
+
+	![output](../Tracking/Result.png)	
+
+	1. Usb Camera (Demo)
+
+		Use ```--input_source /dev/video0```, or ```--input_source 0```
+
+		Also, you can insert = : ```input_source=/dev/video0```, or ```--input_source=0```
+
+		```shell
+		$ python3 UDT.py
+		$ python3 UDT.py --input_source=0
+		$ python3 UDT.py --input_source 0
+		$ python3 UDT.py --input_source=/dev/video0
+		$ python3 UDT.py --input_source /dev/video0
+		```
+
+		The above five lines are the same meaning!
+
+	2. Any Video Input
+
+		I processed some [VOC 2016](https://www.votchallenge.net/vot2016/dataset.html) Oepn Datasets. Especially, you can experiment ```bag.avi``` and ```car1.avi```
+
+		Use ```--input_source bag.avi``` or ```--input_source car1.avi```
+
+		```shell
+		$ python3 UDT.py --input_source bag.avi
+		$ python3 UDT.py --input_source car1.avi
+		```
+
+Until now, you've seen the popular AI algorithms with Jetson nano. Congratulation!!

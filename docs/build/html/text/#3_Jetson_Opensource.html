@@ -106,12 +106,13 @@
 <li class="toctree-l1"><a class="reference internal" href="%232_Image_Classification.html#inference">3. Inference</a></li>
 <li class="toctree-l1"><a class="reference internal" href="%232_Image_Classification.html#faq">FAQ</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Jetson_Opensources:</span></p>
+<p class="caption"><span class="caption-text">Advanced_AI:</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Introduction : Jetson-Inference</a></li>
 <li class="toctree-l1"><a class="reference internal" href="#build-models">1. Build models</a></li>
 <li class="toctree-l1"><a class="reference internal" href="#let-s-run-some-files">2. Let’s Run some files</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#introduction-nvidia-deepstream">Introduction : NVIDIA DeepStream</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#introduction-object-tracking-udt">Introduction : Object Tracking(UDT)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#let-s-run-udt-py">Let’s run UDT.py</a></li>
 </ul>
 
             
@@ -529,9 +530,64 @@ On the other hand, the location <code class="docutils literal notranslate"><span
 </pre></div>
 </div>
 </div>
-<div class="section" id="introduction-nvidia-deepstream">
-<h1>Introduction : NVIDIA DeepStream<a class="headerlink" href="#introduction-nvidia-deepstream" title="Permalink to this headline">¶</a></h1>
-<p>WE CHECK IT LATER! (BECAUSE WE HAVE TO CHECK LICENSE…)</p>
+<div class="section" id="introduction-object-tracking-udt">
+<h1>Introduction : Object Tracking(UDT)<a class="headerlink" href="#introduction-object-tracking-udt" title="Permalink to this headline">¶</a></h1>
+<p>The <strong>Object Tracking Algorithm</strong> means the task to take the first initial set from Object Detection results, to create an unique ID for the firstly detected result respectly, and to track these obejcts by Video(Image Sqequence). A lot of Tracking algorithms are proposed. However, to inference still fast and accurate in Jetson nano, we need to get the much light models.</p>
+<p><img alt="UDT_gituhb" src="../_images/UDT_Capture.png" /></p>
+<p>So, I introduce the <a class="reference external" href="https://openaccess.thecvf.com/content_CVPR_2019/html/Wang_Unsupervised_Deep_Tracking_CVPR_2019_paper.html">Unsupervised Deep Tracking, UDT</a> Algorithm(2019). From this model, we obtain the fact that <strong>FPS</strong> is 70, and <strong>ACU Score</strong> is 59.4%. It is very high score to compare other Supervised-based tracking methods.</p>
+<p>Anyway, we can enjoy this tacking algorithms, by <code class="docutils literal notranslate"><span class="pre">drag-and-drop</span></code> and <code class="docutils literal notranslate"><span class="pre">enter</span></code> key. I modified this code from <a class="reference external" href="https://github.com/594422814/UDT_pytorch">here</a>. You can also find the summary from  <code class="docutils literal notranslate"><span class="pre">AI_beginner_course/DL_cousre/Object_Tracking/README.md</span></code> file.</p>
+</div>
+<div class="section" id="let-s-run-udt-py">
+<h1>Let’s run UDT.py<a class="headerlink" href="#let-s-run-udt-py" title="Permalink to this headline">¶</a></h1>
+<p>This phase is very simple. So I recommend to expriment very various inputs.</p>
+<ol>
+<li><p>Go into Object Tracking files.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">cd</span> ../../../../Object_Tracking/
+</pre></div>
+</div>
+<p>Or if you’re confused your path, then it is also a good way to start from home directory!!</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="c1"># My_Project_Name is &quot;SierrabaseLab&quot;</span>
+$ <span class="nb">cd</span> /home/<span class="o">{</span>Your_Project_Name<span class="o">}</span>/AI_beginner_course/DL_course/Object_Tracking/
+</pre></div>
+</div>
+</li>
+<li><p>You Remember only <code class="docutils literal notranslate"><span class="pre">UDT.py</span></code></p>
+<p>That is, just run :</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ python3 UDT.py
+</pre></div>
+</div>
+<p>Then, the image would be captured. In this frame, you must
+- 1. Drag-and-Drop
+- 2. Press <code class="docutils literal notranslate"><span class="pre">enter</span></code> key</p>
+<p>It is a process called <strong>Region Proposal</strong></p>
+<p><img alt="input" src="../_images/UDT_Capture.png" /></p>
+<p>If you’ve completed, then tracking algorithms will be started.</p>
+<p><img alt="output" src="../_images/Result.png" /></p>
+<ol>
+<li><p>Usb Camera (Demo)</p>
+<p>Use <code class="docutils literal notranslate"><span class="pre">--input_source</span> <span class="pre">/dev/video0</span></code>, or <code class="docutils literal notranslate"><span class="pre">--input_source</span> <span class="pre">0</span></code></p>
+<p>Also, you can insert = : <code class="docutils literal notranslate"><span class="pre">input_source=/dev/video0</span></code>, or <code class="docutils literal notranslate"><span class="pre">--input_source=0</span></code></p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ python3 UDT.py
+$ python3 UDT.py --input_source<span class="o">=</span><span class="m">0</span>
+$ python3 UDT.py --input_source <span class="m">0</span>
+$ python3 UDT.py --input_source<span class="o">=</span>/dev/video0
+$ python3 UDT.py --input_source /dev/video0
+</pre></div>
+</div>
+<p>The above five lines are the same meaning!</p>
+</li>
+<li><p>Any Video Input</p>
+<p>I processed some <a class="reference external" href="https://www.votchallenge.net/vot2016/dataset.html">VOC 2016</a> Oepn Datasets. Especially, you can experiment <code class="docutils literal notranslate"><span class="pre">bag.avi</span></code> and <code class="docutils literal notranslate"><span class="pre">car1.avi</span></code></p>
+<p>Use <code class="docutils literal notranslate"><span class="pre">--input_source</span> <span class="pre">bag.avi</span></code> or <code class="docutils literal notranslate"><span class="pre">--input_source</span> <span class="pre">car1.avi</span></code></p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ python3 UDT.py --input_source bag.avi
+$ python3 UDT.py --input_source car1.avi
+</pre></div>
+</div>
+</li>
+</ol>
+</li>
+</ol>
+<p>Until now, you’ve seen the popular AI algorithms with Jetson nano. Congratulation!!</p>
 </div>
 
 

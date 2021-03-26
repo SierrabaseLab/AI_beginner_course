@@ -15,7 +15,7 @@ We indtroduce
         - Do it Yourself : image_classification (MNIST)
     - Use the advanced AI opensources.
         - Use Opensource 1 : Jetson-Inference
-        - Use Opensource 2 : Deepstreams
+        - Use Opensource 2 : Object-Tracking(UDT)
 
 .. toctree::
    :maxdepth: 2
@@ -31,7 +31,7 @@ We indtroduce
    
 .. toctree::
    :maxdepth: 2
-   :caption: Jetson_Opensources:
+   :caption: Advanced_AI:
 
    text/#3_Jetson_Opensource.md
 

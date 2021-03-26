@@ -6,12 +6,7 @@
 
 ## 1. Introduction
 
-The paper is here 
-~~~
-https://arxiv.org/abs/1904.01828
-~~~
-
-The original open source of this paper is here 
+There is the [paper](https://arxiv.org/abs/1904.01828), UDT. and the original open source of this paper is here 
 ~~~
 C/C++ version (Original) : https://github.com/594422814/UDT
 Python(pytorch) version  : https://github.com/594422814/UDT_pytorch
@@ -53,16 +48,31 @@ And ,there is a his citation;
 	~~~
 ## 3. Implementation
 1. You can just run this file ```UDT.py```
-```
-$ python3 UDT.py
-```
-2. You can change the argument options
 
-```
-$ python3 UDT.py --input 
+	```
+	$ python3 UDT.py
+	```
 
------
+	If the camera recognized in computer, this file will be operated well.
 
-2. Explanation
+2. You can change the argument options ```--input_sources```
 
-I'll upload the ppt material later.
+	1. Web Camera (USB Camera)
+		
+		Use ```--input_source /dev/video0```, ```--input_source 0```
+		
+		Also, you can use ```--input_sourcve=/dev/video0```, ```--input_source=0```
+
+		```shell
+		$ python3 UDT.py --input_source /dev/video0
+		```
+
+	2. Other Video Source
+
+		Use ```--input_source {your files} ``` or ```--input_source={your_files}```/
+
+		```shell
+		$ python3 UDT.py --input_source 
+		```
+
+
