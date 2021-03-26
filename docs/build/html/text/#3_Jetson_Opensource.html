@@ -534,7 +534,7 @@ On the other hand, the location <code class="docutils literal notranslate"><span
 <h1>Introduction : Object Tracking(UDT)<a class="headerlink" href="#introduction-object-tracking-udt" title="Permalink to this headline">¶</a></h1>
 <p>The <strong>Object Tracking Algorithm</strong> means the task to take the first initial set from Object Detection results, to create an unique ID for the firstly detected result respectly, and to track these obejcts by Video(Image Sqequence). A lot of Tracking algorithms are proposed. However, to inference still fast and accurate in Jetson nano, we need to get the much light models.</p>
 <p><img alt="UDT_gituhb" src="../_images/UDT_Capture.png" /></p>
-<p>So, I introduce the <a class="reference external" href="https://openaccess.thecvf.com/content_CVPR_2019/html/Wang_Unsupervised_Deep_Tracking_CVPR_2019_paper.html">Unsupervised Deep Tracking, UDT</a> Algorithm(2019). From this model, we obtain the fact that <strong>FPS</strong> is 70, and <strong>ACU Score</strong> is 59.4%. It is very high score to compare other Supervised-based tracking methods.</p>
+<p>So, I introduce the <a class="reference external" href="https://openaccess.thecvf.com/content_CVPR_2019/html/Wang_Unsupervised_Deep_Tracking_CVPR_2019_paper.html">Unsupervised Deep Tracking, UDT</a> Algorithm(2019). From this model, we obtain the fact that <strong>FPS</strong> is 70, and <strong>AUC Score</strong> is 59.4%. It is very high score to compare other Supervised-based tracking methods.</p>
 <p>Anyway, we can enjoy this tacking algorithms, by <code class="docutils literal notranslate"><span class="pre">drag-and-drop</span></code> a	nd <code class="docutils literal notranslate"><span class="pre">enter</span></code> key. I modified this code from <a class="reference external" href="https://github.com/594422814/UDT_pytorch">here</a>. You can also find the summary from  <a class="reference external" href="https://github.com/SierrabaseLab/AI_beginner_course/blob/master/DL_course/Object_Tracking/README.md">AI_beginner_course/DL_cousre/Object_Tracking/README.md</a> file.</p>
 </div>
 <div class="section" id="let-s-run-udt-py">
@@ -565,7 +565,7 @@ $ <span class="nb">cd</span> /home/<span class="o">{</span>Your_Project_Name<spa
 <p><img alt="input" src="../_images/Region_Proposal.png" /></p>
 <p>If you’ve completed, then tracking algorithms will be started.</p>
 <p><img alt="output" src="../_images/Result.png" /></p>
-<p>In this course, I left two options wheter you use USB WebCamera or Saved Video to input.</p>
+<p>In this course, I left two options whether you use USB WebCamera or Saved Video to input.</p>
 <ol>
 <li><p>Usb Camera (Demo)</p>
 <p>Use <code class="docutils literal notranslate"><span class="pre">--input_source</span> <span class="pre">/dev/video0</span></code>, or <code class="docutils literal notranslate"><span class="pre">--input_source</span> <span class="pre">0</span></code></p>
@@ -582,7 +582,7 @@ $ python3 UDT.py --input_source /dev/video0
 <li><p>Any Video Input</p>
 <p>I processed some <a class="reference external" href="https://www.votchallenge.net/vot2016/dataset.html">VOC 2016</a> Oepn Datasets. Especially, you can experiment <code class="docutils literal notranslate"><span class="pre">bag.avi</span></code> and <code class="docutils literal notranslate"><span class="pre">car1.avi</span></code></p>
 <p>For instance, this is the converted <code class="docutils literal notranslate"><span class="pre">bag.avi</span></code> file.
-![bag](../Tracking/bag.gif	)</p>
+<img alt="bag" src="../_images/bag.gif" /></p>
 <p>Use <code class="docutils literal notranslate"><span class="pre">--input_source</span> <span class="pre">bag.avi</span></code> or <code class="docutils literal notranslate"><span class="pre">--input_source</span> <span class="pre">car1.avi</span></code></p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ python3 UDT.py --input_source bag.avi
 $ python3 UDT.py --input_source car1.avi

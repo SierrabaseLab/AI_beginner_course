@@ -196,7 +196,7 @@ The **Object Tracking Algorithm** means the task to take the first initial set f
 
 ![UDT_gituhb](../Tracking/UDT_Capture.png)
 
-So, I introduce the [Unsupervised Deep Tracking, UDT](https://openaccess.thecvf.com/content_CVPR_2019/html/Wang_Unsupervised_Deep_Tracking_CVPR_2019_paper.html) Algorithm(2019). From this model, we obtain the fact that **FPS** is 70, and **ACU Score** is 59.4%. It is very high score to compare other Supervised-based tracking methods.
+So, I introduce the [Unsupervised Deep Tracking, UDT](https://openaccess.thecvf.com/content_CVPR_2019/html/Wang_Unsupervised_Deep_Tracking_CVPR_2019_paper.html) Algorithm(2019). From this model, we obtain the fact that **FPS** is 70, and **AUC Score** is 59.4%. It is very high score to compare other Supervised-based tracking methods.
 
 Anyway, we can enjoy this tacking algorithms, by ```drag-and-drop``` a	nd ```enter``` key. I modified this code from [here](https://github.com/594422814/UDT_pytorch). You can also find the summary from  [AI_beginner_course/DL_cousre/Object_Tracking/README.md](https://github.com/SierrabaseLab/AI_beginner_course/blob/master/DL_course/Object_Tracking/README.md) file.	
 
@@ -235,7 +235,7 @@ This phase is very simple. So I recommend to expriment very various inputs.
 
 	![output](../Tracking/Result.png)
 
-	In this course, I left two options wheter you use USB WebCamera or Saved Video to input.
+	In this course, I left two options whether you use USB WebCamera or Saved Video to input.
 
 	1. Usb Camera (Demo)
 
@@ -258,7 +258,7 @@ This phase is very simple. So I recommend to expriment very various inputs.
 		I processed some [VOC 2016](https://www.votchallenge.net/vot2016/dataset.html) Oepn Datasets. Especially, you can experiment ```bag.avi``` and ```car1.avi```
 
 		For instance, this is the converted ```bag.avi``` file.
-		![bag](../Tracking/bag.gif	)
+		![bag](../Tracking/bag.gif)
 
 		Use ```--input_source bag.avi``` or ```--input_source car1.avi```
 
