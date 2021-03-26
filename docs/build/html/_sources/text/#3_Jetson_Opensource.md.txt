@@ -229,7 +229,7 @@ This phase is very simple. So I recommend to expriment very various inputs.
 
 	It is a process called **Region Proposal**
 
-	![input](../Tracking/UDT_Capture.png)
+	![input](../Tracking/Region_Proposal.png)
 
 	If you've completed, then tracking algorithms will be started.
 
