@@ -258,6 +258,9 @@ This phase is very simple. So I recommend to expriment very various inputs.
 
 		I processed some [VOC 2016](https://www.votchallenge.net/vot2016/dataset.html) Oepn Datasets. Especially, you can experiment ```bag.avi``` and ```car1.avi```
 
+		For instance, this is the converted ```bag.avi``` file.
+		![bag](../Tracking/bag.gif)
+
 		Use ```--input_source bag.avi``` or ```--input_source car1.avi```
 
 		```shell

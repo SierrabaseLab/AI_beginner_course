@@ -5,6 +5,7 @@
 
 Welcome to AI_beginner_course's documentation!
 ==============================================
+This original Repository is ..here: http://github.com/SierrabaseLab/AI_beginner_course/
 
 We indtroduce 
     - Install Nvidia Jetson nano Devloper kit and it settings
