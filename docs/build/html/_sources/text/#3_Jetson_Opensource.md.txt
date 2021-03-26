@@ -224,8 +224,9 @@ This phase is very simple. So I recommend to expriment very various inputs.
 	```
 
 	Then, the image would be captured. In this frame, you must 
-		- 1. Drag-and-Drop
-		- 2. Press ```enter``` key
+		
+		- Drag-and-Drop
+		- Press ```enter``` key
 
 	It is a process called **Region Proposal**
 
@@ -233,7 +234,9 @@ This phase is very simple. So I recommend to expriment very various inputs.
 
 	If you've completed, then tracking algorithms will be started.
 
-	![output](../Tracking/Result.png)	
+	![output](../Tracking/Result.png)
+
+	In this course, I left two options wheter you use USB WebCamera or Saved Video to input.
 
 	1. Usb Camera (Demo)
 

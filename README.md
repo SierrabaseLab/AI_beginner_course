@@ -11,9 +11,9 @@ The contents are simple :
 	2. [Object Detection / Image Segmentation](https://github.com/dusty-nv/jetson-inference)
 	3. [Object Tracking](DL_course/Object_Tracking)
 
-If you want to know more details, please visit [this site](https://SierrabaseLab.github.io/AI_beginner_course/).
+## Introduction
 
-=====================
+If you want to know more details, please visit [this site](https://SierrabaseLab.github.io/AI_beginner_course/).
 
 ## Contact
 
