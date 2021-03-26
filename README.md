@@ -7,7 +7,7 @@ The contents are simple :
 1. We install Jetson nano and its prequisities ourselves.
 
 2. We introduce some AI algorithms
-	1. [Image Classification](DL_course/Image_Classfication)
+	1. [Image Classification](DL_course/Image_Classification)
 	2. [Object Detection / Image Segmentation](https://github.com/dusty-nv/jetson-inference)
 	3. [Object Tracking](DL_course/Object_Tracking)
 
