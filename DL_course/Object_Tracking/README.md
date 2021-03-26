@@ -19,6 +19,23 @@ Python(pytorch) version  : https://github.com/594422814/UDT_pytorch
 
 From this repository, I modified [UDT_pytorch](https://github.com/594422814/UDT_pytorch)
 
+And ,there is a his citation;
+```
+@inproceedings{Wang_2019_Unsupervised,
+    title={Unsupervised Deep Tracking},
+    author={Wang, Ning and Song, Yibing and Ma, Chao and Zhou, Wengang and Liu, Wei and Li, Houqiang},
+    booktitle={The IEEE Conference on Computer Vision and Pattern Recognition (CVPR)},
+    year={2019}
+}
+
+@article{wang17dcfnet,
+    Author = {Qiang Wang, Jin Gao, Junliang Xing, Mengdan Zhang, Weiming Hu},
+    Title = {DCFNet: Discriminant Correlation Filters Network for Visual Tracking},
+    Journal = {arXiv preprint arXiv:1704.04057},
+    Year = {2017}
+}
+```
+
 ## 2. Settings
 1. System Environments
 	~~~
