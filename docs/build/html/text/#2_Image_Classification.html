@@ -222,22 +222,24 @@
 <p>The picture given below is when you clicked the button “Export model”. From “Tensorflow.js” banner, you can refer to url containing model and datasets. Only in “Tensorflow” banner, you can test simply python codes. You need a tensorflow modules. “Tensorflow Lite” supports to mobile or other edge devices.</p>
 <p><img alt="Output" src="../_images/Download_Mymodel.png" /></p>
 <p>I also made <code class="docutils literal notranslate"><span class="pre">{DL_course/Image_Classficiation/Cam_Classify.py}</span></code> for you. So you can also simulate this file. <strong>If you want to experiment your own datasets, then overwrite <code class="docutils literal notranslate"><span class="pre">labels.txt</span></code> and <code class="docutils literal notranslate"><span class="pre">keras_model.h5</span></code> from <code class="docutils literal notranslate"><span class="pre">converted_keras.zip</span></code> file.</strong></p>
+<p>To proceed this course, simply check this :</p>
+<p><em>You need to set directories on <code class="docutils literal notranslate"><span class="pre">{your_directory}/AI_beginner_course/DL_course/Image_Classification</span></code></em></p>
+<p>So, don’t forget below line :</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="c1"># you can skip, if your current direcory is on &quot;Image_Classification&quot;.</span>
+$ <span class="nb">cd</span> AI_beginner_course/DL_course/Image_Classification/
+</pre></div>
+</div>
+<p>If you’ve finished, try this code :</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ python3 Cam_Classify.py
 </pre></div>
 </div>
-<p>You can escape by pushing <code class="docutils literal notranslate"><span class="pre">q</span></code> key!!. The FPS of this program will be much low, beacuse Teachable Machine supports GPU remotely. Despite of this, it may operate well.</p>
+<p>If you have <code class="docutils literal notranslate"><span class="pre">TLS_block</span></code> error, then please see this <a class="reference external" href="#FAQ">line</a>. You can escape by pushing <code class="docutils literal notranslate"><span class="pre">q</span></code> key!!. The FPS of this program will be much low, beacuse Teachable Machine supports GPU remotely. Despite of this, it may operate well.</p>
 <p>Anyway, you can see more details, such as model parameters, model loss, accuracy and so on in “Teachable Machine” site…</p>
 </div>
 <div class="section" id="introduction-mnist">
 <h1>Introduction : MNIST<a class="headerlink" href="#introduction-mnist" title="Permalink to this headline">¶</a></h1>
 <p><a class="reference external" href="https://commons.wikimedia.org/wiki/File:MnistExamples.png"><img src="https://upload.wikimedia.org/wikipedia/commons/2/27/MnistExamples.png"></a></p>
 <p>MNIST(Modified National Institute of Standards and Technology database) is the database of handwritten digits, (<a class="reference external" href="http://yann.lecun.com/exdb/mnist/">visit for this page</a>), which obtains 60,000 training examples and 10,000 test examples. It is basically used for Deep Learning. We aim to classify the numbers from 0 to 9. Furthermore, we test for our handmade digits, with our made Deep Learning models.</p>
-<p>To proceed this course, simply check this :</p>
-<p><em>You need to set directories on <code class="docutils literal notranslate"><span class="pre">{your_directory}/AI_beginner_course/DL_course/Image_Classification</span></code></em></p>
-<p>So, don’t forget below line :</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">cd</span> AI_beginner_course/DL_course/Image_Classification/
-</pre></div>
-</div>
 </div>
 <div class="section" id="training-phase">
 <h1>1. Training Phase<a class="headerlink" href="#training-phase" title="Permalink to this headline">¶</a></h1>
@@ -335,7 +337,7 @@ From PreProcessed/Preprocessed_3.jpg, We predicted :  <span class="o">[</span><s
 </div>
 <div class="section" id="faq">
 <h1>FAQ<a class="headerlink" href="#faq" title="Permalink to this headline">¶</a></h1>
-<p>Q. I got a problem with :</p>
+<p>Q. I got a problem with : <a id="FAQ"></a></p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>ImportError: /usr/lib/aarch64-linux-gnu/libgomp.so.1: cannot allocate memory <span class="k">in</span> static TLS block
 </pre></div>
 </div>

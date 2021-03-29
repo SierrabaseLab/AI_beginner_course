@@ -50,11 +50,23 @@ The picture given below is when you clicked the button "Export model". From "Ten
 
 I also made ```{DL_course/Image_Classficiation/Cam_Classify.py}``` for you. So you can also simulate this file. **If you want to experiment your own datasets, then overwrite ```labels.txt``` and ```keras_model.h5``` from ```converted_keras.zip``` file.**
 
+To proceed this course, simply check this :
+
+*You need to set directories on ```{your_directory}/AI_beginner_course/DL_course/Image_Classification```*
+
+So, don't forget below line :
+```shell
+# you can skip, if your current direcory is on "Image_Classification".
+$ cd AI_beginner_course/DL_course/Image_Classification/
+```
+
+If you've finished, try this code :
+
 ```shell
 $ python3 Cam_Classify.py
 ```
 
-You can escape by pushing ```q``` key!!. The FPS of this program will be much low, beacuse Teachable Machine supports GPU remotely. Despite of this, it may operate well.
+If you have ```TLS_block``` error, then please see this [line](#FAQ). You can escape by pushing ```q``` key!!. The FPS of this program will be much low, beacuse Teachable Machine supports GPU remotely. Despite of this, it may operate well.
 
 Anyway, you can see more details, such as model parameters, model loss, accuracy and so on in "Teachable Machine" site...
 
@@ -63,15 +75,6 @@ Anyway, you can see more details, such as model parameters, model loss, accuracy
 [<img src="https://upload.wikimedia.org/wikipedia/commons/2/27/MnistExamples.png">](https://commons.wikimedia.org/wiki/File:MnistExamples.png)
 
 MNIST(Modified National Institute of Standards and Technology database) is the database of handwritten digits, ([visit for this page](http://yann.lecun.com/exdb/mnist/)), which obtains 60,000 training examples and 10,000 test examples. It is basically used for Deep Learning. We aim to classify the numbers from 0 to 9. Furthermore, we test for our handmade digits, with our made Deep Learning models.
-
-To proceed this course, simply check this :
-
-*You need to set directories on ```{your_directory}/AI_beginner_course/DL_course/Image_Classification```*
-
-So, don't forget below line :
-```shell
-$ cd AI_beginner_course/DL_course/Image_Classification/
-```
 
 ## 1. Training Phase 
 	
@@ -186,7 +189,7 @@ From PreProcessed/Preprocessed_3.jpg, We predicted :  [4] .
 	
 ## FAQ
 
-Q. I got a problem with :
+Q. I got a problem with : <a id="FAQ"></a>
 ```shell
 ImportError: /usr/lib/aarch64-linux-gnu/libgomp.so.1: cannot allocate memory in static TLS block
 ```
